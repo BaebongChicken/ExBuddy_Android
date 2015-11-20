@@ -1,9 +1,15 @@
-package kr.co.kj_studio.exbuddy;
+package kr.co.kj_studio.exbuddy.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import kr.co.kj_studio.exbuddy.R;
+import kr.co.kj_studio.exbuddy.utils.ContextUtil;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -12,6 +18,30 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        Handler mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("Log", "3sec");
+                startAppropriateActivity();
+            }
+        }, 1500);
+    }
+
+    void startAppropriateActivity() {
+        if (ContextUtil.isUserLoggedin(SplashActivity.this)) {
+//            Intent mIntent = new Intent(SplashActivity.this, SelectPayMethodActivity.class);
+//            startActivity(mIntent);
+//            finish();
+        }
+        else {
+            Intent mIntent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(mIntent);
+            finish();
+        }
+
+
     }
 
     @Override
