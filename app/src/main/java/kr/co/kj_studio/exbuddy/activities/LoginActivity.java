@@ -1,5 +1,6 @@
 package kr.co.kj_studio.exbuddy.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -28,7 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         facebookLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent mIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(mIntent);
+                finish();
             }
         });
     }
