@@ -49,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void setValues() {
 
-        mTitleTextView.setText(R.string.SignUp);
+        mTitleTextView.setText(R.string.signup_title);
         okBtn.setVisibility(View.VISIBLE);
 
     }

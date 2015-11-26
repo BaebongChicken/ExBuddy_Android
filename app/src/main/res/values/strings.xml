@@ -6,13 +6,21 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
-
-    <string name="SignUp">Sign Up</string>
+    //share
     <string name="Member">Member</string>
     <string name="Coach">Coach</string>
+    //
     <string name="Yourspecialityorjob">Your speciality or job</string>
     <string name="Location">Location</string>
     <string name="Profileline">Profile line</string>
     <string name="Aboutme">About me</string>
-    <string name="Letsgetstarted">Let\'s get started!</string>
+    //SignUpActivity
+    <string name="signup_subtitle_1">Enter your Location</string>
+    <string name="signup_subtitle_2">Member Or Coach?</string>
+    <string name="signup_subtitle_3">What are you interested in?</string>
+    <string name="signup_caption_1">You can choose Maximum 4 kinds</string>
+    <string name="signup_title">Sign Up</string>
+    <string name="signup_button_1">NEXT</string>
+
+
 </resources>

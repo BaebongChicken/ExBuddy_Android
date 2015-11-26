@@ -28,7 +28,7 @@
         </activity>
         <activity
             android:name=".activities.SignUpActivity"
-            android:label="@string/title_activity_sign_up">
+            android:label="@string/title_activity_sign_up" >
         </activity>
     </application>
 

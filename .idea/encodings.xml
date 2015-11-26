@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/kr/co/kj_studio/exbuddy/activities/SignUpActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/kr/co/kj_studio/exbuddy/utils/AsyncHttpRequest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/kr/co/kj_studio/exbuddy/utils/BackPressCloseHandler.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/kr/co/kj_studio/exbuddy/utils/ContextUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/kr/co/kj_studio/exbuddy/utils/HttpRequest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/kr/co/kj_studio/exbuddy/utils/ServerUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/check3.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/gb_facebook_login_image.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/gb_kakao_login_image.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/custom_action_bar.xml" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
