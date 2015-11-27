@@ -24,7 +24,8 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    private void setupEvents() {
+
+    public void setupEvents() {
         facebookLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

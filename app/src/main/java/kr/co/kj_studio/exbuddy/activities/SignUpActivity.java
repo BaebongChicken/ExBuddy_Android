@@ -1,16 +1,17 @@
 package kr.co.kj_studio.exbuddy.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import kr.co.kj_studio.exbuddy.R;
 
 public class SignUpActivity extends BaseActivity {
-//
-//    public TextView mTitleTextView;
-//    ImageButton okBtn;
+
+    private Button nextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,61 +19,29 @@ public class SignUpActivity extends BaseActivity {
         setContentView(R.layout.activity_sign_up);
         setCustomActionbar();
         bindViews();
-//        bindViews();
-//        setValues();
-        setValues(R.string.signup_title, View.VISIBLE, View.GONE);
-        setupEvents(MainActivity.class);
+        setValues(R.string.signup_title);
+        setupEvents();
 
     }
 
-//
-//    private void setupEvents() {
-//
-//        okBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent mIntent = new Intent(SignUpActivity.this, MainActivity.class);
-//                startActivity(mIntent);
-//                finish();
-//            }
-//        });
-//
-//
-//    }
-//
-//    private void setValues() {
-//
-//        mTitleTextView.setText(R.string.signup_title);
-//        okBtn.setVisibility(View.VISIBLE);
-//
-//    }
+    @Override
+    public void setupEvents() {
+        super.setupEvents();
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(getApplicationContext(), AdtlSignUpActivity.class);
+                startActivity(mIntent);
+                finish();
+            }
+        });
+    }
 
-//    private void bindViews() {
-
-//        mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
-//        okBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
-        
-//    }
-//    private void setCustomActionbar() {
-//
-//        ActionBar mActionBar = getSupportActionBar();
-//        mActionBar.setDisplayShowHomeEnabled(false);
-//        mActionBar.setDisplayHomeAsUpEnabled(false);
-//        mActionBar.setDisplayShowTitleEnabled(false);
-//        mActionBar.setDisplayShowCustomEnabled(true);
-//        LayoutInflater mInflater = LayoutInflater.from(this);
-//
-//        View mCustomView = mInflater.inflate(R.layout.custom_action_bar, null);
-//
-//
-//        mActionBar.setCustomView(mCustomView);
-//        mActionBar.setDisplayShowCustomEnabled(true);
-//
-//        Toolbar parent = (Toolbar) mCustomView.getParent();
-//        parent.setContentInsetsAbsolute(0, 0);
-//    }
-
+    @Override
+    public void bindViews() {
+        super.bindViews();
+             nextBtn = (Button)findViewById(R.id.nextBtn);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

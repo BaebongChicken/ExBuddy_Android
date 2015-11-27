@@ -21,6 +21,13 @@
     <string name="signup_caption_1">You can choose Maximum 4 kinds</string>
     <string name="signup_title">Sign Up</string>
     <string name="signup_button_1">NEXT</string>
+    <string name="signupadtl_subtitle_1">Enter your additional information</string>
+    <string name="signupadtl_hint_1">Where are you from?</string>
+    <string name="signupadtl_hint_2">Speciality or Job?</string>
+    <string name="signupadtl_hint_3">Profile Line</string>
+    <string name="signupadtl_hint_4">About me</string>
+    <string name="title_activity_adtl_sign_up">AdtlSignUpActivity</string>
+    <string name="signupadtl_title">Additional Info</string>
 
 
 </resources>

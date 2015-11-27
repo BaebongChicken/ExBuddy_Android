@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    tools:context="kr.co.kj_studio.exbuddy.activities.SignUpActivity"
+    android:gravity="center_horizontal">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="@dimen/menu_width_extend"
+            android:layout_height="wrap_content"
+            android:text="@string/signupadtl_subtitle_1"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_top" />
+
+        <EditText
+            android:layout_width="@dimen/menu_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_marginTop="@dimen/margin_top"
+            android:hint="@string/signupadtl_hint_1" />
+
+        <EditText
+            android:layout_width="@dimen/menu_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:layout_marginTop="@dimen/margin_top"
+            android:hint="@string/signupadtl_hint_2" />
+
+        <EditText
+            android:layout_width="@dimen/menu_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:layout_marginTop="@dimen/margin_top"
+            android:hint="@string/signupadtl_hint_3" />
+
+        <EditText
+            android:layout_width="@dimen/menu_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText4"
+            android:layout_marginTop="@dimen/margin_top"
+            android:hint="@string/signupadtl_hint_4" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_button_1"
+            android:id="@+id/nextBtn"
+            android:layout_marginTop="@dimen/margin_top" />
+    </LinearLayout>
+</LinearLayout>

@@ -31,9 +31,9 @@ public class MainActivity extends BaseActivity {
         setupEvents();
     }
 
-
-    private void setupEvents() {
-
+    @Override
+    public void setupEvents() {
+        super.setupEvents();
         toggleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +47,6 @@ public class MainActivity extends BaseActivity {
         });
 
         backPressCloseHandler = new BackPressCloseHandler(this);
-
     }
 
     @Override

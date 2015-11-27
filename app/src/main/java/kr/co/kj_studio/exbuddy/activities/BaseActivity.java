@@ -20,6 +20,10 @@ public class BaseActivity extends AppCompatActivity {
     public static ImageButton okBtn;
     public static ImageButton toggleBtn;
 
+    public void setupEvents() {
+
+    }
+
     public void setupEvents(final Class<?> targetActivity) {
         final Class<?> mTargetActivity = targetActivity;
         okBtn.setOnClickListener(new View.OnClickListener() {
@@ -38,11 +42,24 @@ public class BaseActivity extends AppCompatActivity {
         toggleBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
     }
 
+    public void setValues(int title) {
+        mTitleTextView.setText(title);
+
+    }
+
+    public void setValues(int title, int okView) {
+        mTitleTextView.setText(title);
+        okBtn.setVisibility(okView);
+    }
+
     public void setValues(int title, int okView, int toggleView) {
         mTitleTextView.setText(title);
         okBtn.setVisibility(okView);
         toggleBtn.setVisibility(toggleView);
     }
+
+
+
 
 
     public void setCustomActionbar() {
