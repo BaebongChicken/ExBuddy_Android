@@ -40,7 +40,7 @@ public class SignUpActivity extends BaseActivity {
     @Override
     public void bindViews() {
         super.bindViews();
-             nextBtn = (Button)findViewById(R.id.nextBtn);
+        nextBtn = (Button)findViewById(R.id.nextBtn);
     }
 
     @Override
