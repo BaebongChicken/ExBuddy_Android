@@ -13,7 +13,7 @@ import java.util.Map;
 public class ServerUtil {
 	private static final String TAG = ServerUtil.class.getSimpleName();
 
-	private final static String BASE_URL = "http://repot2015.cafe24.com/ci/repot/";
+	private final static String BASE_URL = "http://cho881020.cafe24.com/ci/cc_calendar/";
 
 	public interface JsonResponseHandler {
 		void onResponse(JSONObject json);
