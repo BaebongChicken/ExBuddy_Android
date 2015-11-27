@@ -1,83 +1,77 @@
 package kr.co.kj_studio.exbuddy.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import kr.co.kj_studio.exbuddy.R;
 
-public class SignUpActivity extends AppCompatActivity {
-
-    public TextView mTitleTextView;
-    ImageButton okBtn;
+public class SignUpActivity extends BaseActivity {
+//
+//    public TextView mTitleTextView;
+//    ImageButton okBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
         setCustomActionbar();
         bindViews();
-        setValues();
-        setupEvents();
+//        bindViews();
+//        setValues();
+        setValues(R.string.signup_title, View.VISIBLE, View.GONE);
+        setupEvents(MainActivity.class);
 
     }
 
+//
+//    private void setupEvents() {
+//
+//        okBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent mIntent = new Intent(SignUpActivity.this, MainActivity.class);
+//                startActivity(mIntent);
+//                finish();
+//            }
+//        });
+//
+//
+//    }
+//
+//    private void setValues() {
+//
+//        mTitleTextView.setText(R.string.signup_title);
+//        okBtn.setVisibility(View.VISIBLE);
+//
+//    }
 
-    private void setupEvents() {
+//    private void bindViews() {
 
-        okBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent mIntent = new Intent(SignUpActivity.this, MainActivity.class);
-                startActivity(mIntent);
-                finish();
-            }
-        });
-
-
-    }
-
-    private void setValues() {
-
-        mTitleTextView.setText(R.string.signup_title);
-        okBtn.setVisibility(View.VISIBLE);
-
-    }
-
-    private void bindViews() {
-
-        mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
-        okBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
+//        mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
+//        okBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
         
-    }
-    private void setCustomActionbar() {
-
-        ActionBar mActionBar = getSupportActionBar();
-        mActionBar.setDisplayShowHomeEnabled(false);
-        mActionBar.setDisplayHomeAsUpEnabled(false);
-        mActionBar.setDisplayShowTitleEnabled(false);
-        mActionBar.setDisplayShowCustomEnabled(true);
-        LayoutInflater mInflater = LayoutInflater.from(this);
-
-        View mCustomView = mInflater.inflate(R.layout.custom_action_bar, null);
-
-
-        mActionBar.setCustomView(mCustomView);
-        mActionBar.setDisplayShowCustomEnabled(true);
-
-        Toolbar parent = (Toolbar) mCustomView.getParent();
-        parent.setContentInsetsAbsolute(0, 0);
-    }
+//    }
+//    private void setCustomActionbar() {
+//
+//        ActionBar mActionBar = getSupportActionBar();
+//        mActionBar.setDisplayShowHomeEnabled(false);
+//        mActionBar.setDisplayHomeAsUpEnabled(false);
+//        mActionBar.setDisplayShowTitleEnabled(false);
+//        mActionBar.setDisplayShowCustomEnabled(true);
+//        LayoutInflater mInflater = LayoutInflater.from(this);
+//
+//        View mCustomView = mInflater.inflate(R.layout.custom_action_bar, null);
+//
+//
+//        mActionBar.setCustomView(mCustomView);
+//        mActionBar.setDisplayShowCustomEnabled(true);
+//
+//        Toolbar parent = (Toolbar) mCustomView.getParent();
+//        parent.setContentInsetsAbsolute(0, 0);
+//    }
 
 
     @Override

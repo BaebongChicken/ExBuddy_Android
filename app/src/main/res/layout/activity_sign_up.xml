@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:background="#FFF"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    tools:context="kr.co.kj_studio.exbuddy.activities.SignUpActivity">
+    tools:context="kr.co.kj_studio.exbuddy.activities.SignUpActivity"
+    android:gravity="center_horizontal">
 
     <LinearLayout
         android:orientation="vertical"
@@ -150,6 +150,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/signup_button_1"/>
+        android:text="@string/signup_button_1" />
 
 </LinearLayout>

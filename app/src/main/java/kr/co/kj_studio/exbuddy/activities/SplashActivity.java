@@ -3,7 +3,6 @@ package kr.co.kj_studio.exbuddy.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +11,7 @@ import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.utils.ContextUtil;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -30,9 +30,10 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="제목이 나와야해!"
-            android:textColor="#000"
+            android:textColor="@color/color_text_primary_inverse"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:background="@color/color_primary" />
 
         <Button
             android:id="@+id/addBtn"

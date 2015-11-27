@@ -2,33 +2,20 @@ package kr.co.kj_studio.exbuddy.activities;
 
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.utils.BackPressCloseHandler;
 
-public class MainActivity extends AppCompatActivity {
-
-    TextView mTitleTextView;
-    ImageButton okBtn;
-    ImageButton toggleBtn;
-
+public class MainActivity extends BaseActivity {
 
     private BackPressCloseHandler backPressCloseHandler;
-
-
     private DrawerLayout dlDrawer;
     private ListView lvNavList;
     LinearLayout drawLayout;
@@ -40,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setCustomActionbar();
         bindViews();
-        setValues();
+        setValues(R.string.app_name, View.VISIBLE, View.VISIBLE);
         setupEvents();
     }
 
@@ -53,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (dlDrawer.isDrawerOpen(drawLayout)) {
                     dlDrawer.closeDrawer(drawLayout);
-                }
-                else {
+                } else {
                     dlDrawer.openDrawer(drawLayout);
                 }
             }
@@ -64,46 +50,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setValues() {
-
-        mTitleTextView.setText(R.string.app_name);
-        okBtn.setVisibility(View.VISIBLE);
-        toggleBtn.setVisibility(View.VISIBLE);
-
-
+    @Override
+    public void setValues(int title, int okView, int toggleView) {
+        super.setValues(title, okView, toggleView);
         lvNavList.setAdapter(
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, navItems));
         lvNavList.setOnItemClickListener(new DrawerItemClickListener());
     }
 
-    private void bindViews() {
-
-        mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
-        okBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
-        toggleBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
-
+    @Override
+    public void bindViews() {
+        super.bindViews();
         drawLayout = (LinearLayout) findViewById(R.id.drawLayout);
         dlDrawer = (DrawerLayout) findViewById(R.id.dl_activity_main_drawer);
         lvNavList = (ListView) findViewById(R.id.lv_activity_main_nav_list);
 
-    }
-    private void setCustomActionbar() {
-
-        ActionBar mActionBar = getSupportActionBar();
-        mActionBar.setDisplayShowHomeEnabled(false);
-        mActionBar.setDisplayHomeAsUpEnabled(false);
-        mActionBar.setDisplayShowTitleEnabled(false);
-        mActionBar.setDisplayShowCustomEnabled(true);
-        LayoutInflater mInflater = LayoutInflater.from(this);
-
-        View mCustomView = mInflater.inflate(R.layout.custom_action_bar, null);
-
-
-        mActionBar.setCustomView(mCustomView);
-        mActionBar.setDisplayShowCustomEnabled(true);
-
-        Toolbar parent = (Toolbar) mCustomView.getParent();
-        parent.setContentInsetsAbsolute(0, 0);
     }
 
     @Override
@@ -111,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (dlDrawer.isDrawerOpen(drawLayout)) {
             dlDrawer.closeDrawer(drawLayout);
-        }
-        else {
+        } else {
             backPressCloseHandler.onBackPressed();
         }
 

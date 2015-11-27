@@ -2,7 +2,6 @@ package kr.co.kj_studio.exbuddy.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.Button;
 
 import kr.co.kj_studio.exbuddy.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
 
     Button facebookLoginBtn;
@@ -36,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void bindViews() {
+    @Override
+    public void bindViews() {
         facebookLoginBtn = (Button) findViewById(R.id.facebookLoginBtn);
     }
 
