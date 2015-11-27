@@ -44,6 +44,7 @@
             android:background="@drawable/gb_kakao_login_image"
             android:layout_width="300dp"
             android:layout_height="50dp"
+            android:visibility="gone"
             android:layout_marginTop="10dp"/>
 
 
