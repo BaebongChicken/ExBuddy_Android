@@ -1,20 +1,22 @@
 <resources>
-    <string name="app_name">ExBuddy</string>
 
+    <!--XML은 지금 이 형식이 주석이다-->
+
+    <string name="app_name">ExBuddy</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
-    //share
+    <!--//share-->
     <string name="Member">Member</string>
     <string name="Coach">Coach</string>
-    //
+    <!--//-->
     <string name="Yourspecialityorjob">Your speciality or job</string>
     <string name="Location">Location</string>
     <string name="Profileline">Profile line</string>
     <string name="Aboutme">About me</string>
-    //SignUpActivity
+    <!--//SignUpActivity-->
     <string name="signup_subtitle_1">Enter your Location</string>
     <string name="signup_subtitle_2">Member Or Coach?</string>
     <string name="signup_subtitle_3">What are you interested in?</string>

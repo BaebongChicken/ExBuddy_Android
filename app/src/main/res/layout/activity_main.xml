@@ -40,11 +40,26 @@
         android:background="#FFF"
         android:orientation="vertical"
         android:visibility="visible">
-
-        <TextView
-            android:layout_width="240dp"
+        
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="프사 표시 공간" />
+            android:padding="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:padding="5dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/check3"/>
+
+            <TextView
+                android:id="@+id/userNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이름을 띄워줍시다" />
+        </LinearLayout>
+
 
         <ListView
             android:id="@+id/lv_activity_main_nav_list"
