@@ -30,6 +30,8 @@
     <string name="signupadtl_hint_4">About me</string>
     <string name="title_activity_adtl_sign_up">AdtlSignUpActivity</string>
     <string name="signupadtl_title">Additional Info</string>
+    <!--//InterestedActsActivity-->
+    <string name="ia_tile">Choose your favorites</string>
 
 
 </resources>
