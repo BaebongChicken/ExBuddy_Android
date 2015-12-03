@@ -52,6 +52,7 @@ public class InterestedActsFragment_1 extends FragmentBaseActivity {
             mBtn.setText((j + 1) + " : " + selectionSportsArray[j]);
             mBtn.setBackgroundResource(R.color.color_primary);
             selectSportsBtnArray.add(mBtn);
+
         }
     }
 
