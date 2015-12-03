@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -21,11 +23,16 @@ public class InterestedActsActivity extends BaseActivity {
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
     public InterestedActsFragment_1 InterestedActsFragment_1;
     public InterestedActsFragment_2 InterestedActsFragment_2;
+    private Button sportsBtn;
+    private Button fitnessBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interested_acts);
+
+
         setCustomActionbar();
         bindViews();
         setValues(R.string.ia_tile);
@@ -44,7 +51,28 @@ public class InterestedActsActivity extends BaseActivity {
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mPagerAdapter = new PageAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdapter);
+        this.fitnessBtn = (Button) findViewById(R.id.fitnessBtn);
+        this.sportsBtn = (Button) findViewById(R.id.sportsBtn);
 
+    }
+
+    @Override
+    public void setupEvents() {
+        super.setupEvents();
+
+        sportsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewPager.setCurrentItem(0);
+            }
+        });
+
+        fitnessBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewPager.setCurrentItem(1);
+            }
+        });
     }
 
     public void setViewPager(){
@@ -56,7 +84,16 @@ public class InterestedActsActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-
+                switch (position){
+                    case 0:
+                        sportsBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent));
+                        fitnessBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent_inverse));
+                        break;
+                    case 1:
+                        sportsBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent_inverse));
+                        fitnessBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent));
+                        break;
+                }
             }
 
             @Override
