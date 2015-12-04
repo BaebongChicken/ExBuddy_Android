@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFF"
     android:orientation="vertical"
-    tools:context=".fragments.InterestedActsFragment_1"
+    tools:context=".Fragments.InterestedActsFragment_1"
     android:paddingTop="50dp"
     android:id="@+id/selectionSportsLyt">
 

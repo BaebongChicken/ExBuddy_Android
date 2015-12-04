@@ -11,9 +11,8 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.R;
-import kr.co.kj_studio.exbuddy.activities.FragmentBaseActivity;
 
-public class InterestedActsFragment_1 extends FragmentBaseActivity {
+public class InterestedActsFragment_1 extends BaseFragment {
 
     public LinearLayout selectionSportsLyt ;
     public String[] selectionSportsArray = {"soccer", "baseball", "boarding", "skydiving"};
@@ -34,7 +33,7 @@ public class InterestedActsFragment_1 extends FragmentBaseActivity {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        layoutResId = R.layout.activity_interested_acts_fragment_1;
+        layoutResId = R.layout.fragment_interested_acts1;
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
@@ -59,7 +58,7 @@ public class InterestedActsFragment_1 extends FragmentBaseActivity {
     void makeSportsLayout() {
         LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        int mPortion = ((int) (selectionSportsArray.length / 3) + 1);
+        int mPortion = (selectionSportsArray.length / 3 + 1);
 
         for (int i = 0; i < mPortion; i++) {
             LinearLayout mLayout = new LinearLayout(getActivity());

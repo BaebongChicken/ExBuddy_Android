@@ -3,9 +3,8 @@ package kr.co.kj_studio.exbuddy.Fragments;
 import android.os.Bundle;
 
 import kr.co.kj_studio.exbuddy.R;
-import kr.co.kj_studio.exbuddy.activities.FragmentBaseActivity;
 
-public class InterestedActsFragment_2 extends FragmentBaseActivity {
+public class InterestedActsFragment_2 extends BaseFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -14,6 +13,6 @@ public class InterestedActsFragment_2 extends FragmentBaseActivity {
     }
 
     void onCreateView(){
-        layoutResId = R.layout.activity_interested_acts_fragment_2;
+        layoutResId = R.layout.fragment_interested_acts2;
     }
 }

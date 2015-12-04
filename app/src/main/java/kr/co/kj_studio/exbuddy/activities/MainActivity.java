@@ -20,9 +20,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import kr.co.kj_studio.exbuddy.fragments.FindGroupFragment;
-import kr.co.kj_studio.exbuddy.fragments.FindMemberFragment;
-import kr.co.kj_studio.exbuddy.fragments.MissionsFragment;
+import kr.co.kj_studio.exbuddy.Fragments.FindGroupFragment;
+import kr.co.kj_studio.exbuddy.Fragments.FindMemberFragment;
+import kr.co.kj_studio.exbuddy.Fragments.MissionsFragment;
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.utils.BackPressCloseHandler;
 
