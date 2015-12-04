@@ -11,8 +11,8 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-import kr.co.kj_studio.exbuddy.Fragments.InterestedActsFragment_1;
-import kr.co.kj_studio.exbuddy.Fragments.InterestedActsFragment_2;
+import kr.co.kj_studio.exbuddy.fragments.InterestedActsFragment_1;
+import kr.co.kj_studio.exbuddy.fragments.InterestedActsFragment_2;
 import kr.co.kj_studio.exbuddy.R;
 
 public class InterestedActsActivity extends BaseActivity {
@@ -21,8 +21,8 @@ public class InterestedActsActivity extends BaseActivity {
     public PagerAdapter mPagerAdapter;
     public InterestedActsActivity mIAActivity;
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
-    public InterestedActsFragment_1 InterestedActsFragment_1;
-    public InterestedActsFragment_2 InterestedActsFragment_2;
+    public kr.co.kj_studio.exbuddy.fragments.InterestedActsFragment_1 InterestedActsFragment_1;
+    public kr.co.kj_studio.exbuddy.fragments.InterestedActsFragment_2 InterestedActsFragment_2;
     private Button sportsBtn;
     private Button fitnessBtn;
 

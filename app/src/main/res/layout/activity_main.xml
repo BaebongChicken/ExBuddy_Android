@@ -10,24 +10,48 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-        <ImageView
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_awesome_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#504"/>
+            android:layout_height="50dp" />
 
-        <ImageView
+        <LinearLayout
+            android:id="@+id/fragment_mainContainer1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#0F0"/>
+            android:orientation="vertical" >
+        </LinearLayout>
 
-        <ImageView
+
+        <LinearLayout
+            android:id="@+id/fragment_mainContainer2"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#00F"/>
+            android:visibility="gone"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/fragment_mainContainer3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/fragment_mainContainer4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="vertical" >
+        </LinearLayout>
 
     </LinearLayout>
 

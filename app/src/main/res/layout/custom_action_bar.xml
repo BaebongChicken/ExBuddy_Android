@@ -12,17 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/toggleBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="#0000"
-            android:src="@drawable/check3"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            android:visibility="gone"
-            android:layout_gravity="left|center_vertical"
-            android:text="+"/>
 
         <TextView
             android:id="@+id/titleTxt"
@@ -34,6 +23,21 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:background="@color/color_primary" />
+
+        <!--프레임레이아웃은 밑에 깔린놈이 화면 위로 드러난다.-->
+        <!--이미지버튼이 텍스트뷰 뒤에 깔려서 안나오길래 앞으로 끄집어냈다.-->
+
+        <ImageButton
+            android:id="@+id/toggleBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#0000"
+            android:src="@drawable/check3"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:layout_gravity="left|center_vertical"/>
+
 
         <Button
             android:id="@+id/addBtn"

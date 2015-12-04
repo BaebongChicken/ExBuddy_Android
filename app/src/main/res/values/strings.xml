@@ -32,6 +32,11 @@
     <string name="signupadtl_title">Additional Info</string>
     <!--//InterestedActsActivity-->
     <string name="ia_tile">Choose your favorites</string>
+    <!--SelectModeActivity-->
+    <string name="selectmode_item0">Comlete Missions</string>
+    <string name="selectmode_item1">Find Groups to</string>
+    <string name="selectmode_item1_execercisewith">Excercise With</string>
+    <string name="selectmode_item2">Find Members to</string>
 
 
 </resources>

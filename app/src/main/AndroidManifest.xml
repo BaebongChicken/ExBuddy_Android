@@ -23,14 +23,15 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".activities.SignUpActivity"
             android:label="@string/title_activity_sign_up" />
         <activity android:name=".activities.AdtlSignUpActivity" />
         <activity android:name=".activities.InterestedActsActivity" />
-        <activity android:name=".Fragments.InterestedActsFragment_1" />
-        <activity android:name=".Fragments.InterestedActsFragment_2"></activity>
+        <activity android:name=".activities.SelectModeActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
