@@ -34,6 +34,7 @@ public class SignUp2Activity extends BaseActivity {
 
     @Override
     public void bindViews() {
+        super.bindViews();
         this.nextBtn = (Button) findViewById(R.id.nextBtn);
         this.interestAct4Btn = (Button) findViewById(R.id.interestAct4Btn);
         this.interestAct3Btn = (Button) findViewById(R.id.interestAct3Btn);
