@@ -20,6 +20,7 @@ public class MissionsFragment extends BaseFragment {
 
     ListView missionListView;
     ArrayList<MissionData> mMissionList = new ArrayList<>();
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
