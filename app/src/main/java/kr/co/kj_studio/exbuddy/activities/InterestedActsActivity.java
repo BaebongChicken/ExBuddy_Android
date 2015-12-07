@@ -11,8 +11,8 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-import kr.co.kj_studio.exbuddy.Fragments.InterestedActsFragment_1;
-import kr.co.kj_studio.exbuddy.Fragments.InterestedActsFragment_2;
+import kr.co.kj_studio.exbuddy.Fragments.InterestedActs1Fragment;
+import kr.co.kj_studio.exbuddy.Fragments.InterestedActs2Fragment;
 import kr.co.kj_studio.exbuddy.R;
 
 public class InterestedActsActivity extends BaseActivity {
@@ -21,8 +21,8 @@ public class InterestedActsActivity extends BaseActivity {
     public PagerAdapter mPagerAdapter;
     public InterestedActsActivity mIAActivity;
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
-    public kr.co.kj_studio.exbuddy.Fragments.InterestedActsFragment_1 InterestedActsFragment_1;
-    public kr.co.kj_studio.exbuddy.Fragments.InterestedActsFragment_2 InterestedActsFragment_2;
+    public InterestedActs1Fragment InterestedActs1Fragment;
+    public InterestedActs2Fragment InterestedActsFragment_2;
     private Button sportsBtn;
     private Button fitnessBtn;
 
@@ -35,7 +35,7 @@ public class InterestedActsActivity extends BaseActivity {
 
         setCustomActionbar();
         bindViews();
-        setValues(R.string.ia_tile);
+        setValues(R.string.InterestedActs_title);
         setupEvents();
         setViewPager();
 
@@ -44,8 +44,8 @@ public class InterestedActsActivity extends BaseActivity {
     @Override
     public void bindViews() {
         super.bindViews();
-        InterestedActsFragment_1 = new InterestedActsFragment_1();
-        InterestedActsFragment_2 = new InterestedActsFragment_2();
+        InterestedActs1Fragment = new InterestedActs1Fragment();
+        InterestedActsFragment_2 = new InterestedActs2Fragment();
         addFragments();
         mIAActivity = InterestedActsActivity.this;
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -86,12 +86,16 @@ public class InterestedActsActivity extends BaseActivity {
             public void onPageSelected(int position) {
                 switch (position){
                     case 0:
-                        sportsBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent));
-                        fitnessBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent_inverse));
+                        sportsBtn.setBackgroundColor(getResources().getColor(R.color.color_background_white));
+                        sportsBtn.setTextColor(getResources().getColor(R.color.color_text_primary));
+                        fitnessBtn.setBackgroundColor(getResources().getColor(R.color.color_primary));
+                        fitnessBtn.setTextColor(getResources().getColor(R.color.color_text_primary_inverse));
                         break;
                     case 1:
-                        sportsBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent_inverse));
-                        fitnessBtn.setBackgroundColor(getResources().getColor(R.color.color_Accent));
+                        sportsBtn.setBackgroundColor(getResources().getColor(R.color.color_primary));
+                        sportsBtn.setTextColor(getResources().getColor(R.color.color_text_primary_inverse));
+                        fitnessBtn.setBackgroundColor(getResources().getColor(R.color.color_background_white));
+                        fitnessBtn.setTextColor(getResources().getColor(R.color.color_text_primary));
                         break;
                 }
             }
@@ -104,7 +108,7 @@ public class InterestedActsActivity extends BaseActivity {
     }
 
     private void addFragments(){
-        fragList.add(InterestedActsFragment_1);
+        fragList.add(InterestedActs1Fragment);
         fragList.add(InterestedActsFragment_2);
     }
 

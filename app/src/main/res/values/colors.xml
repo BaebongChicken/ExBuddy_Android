@@ -2,11 +2,13 @@
 <resources>
 
 
-    <color name="color_primary">#dd0000</color>
+    <color name="color_primary">#dd3333</color>
     <color name="color_primary_Dark">#440000</color>
+    <color name="color_primary_Soft">#dd7777</color>
     <color name="color_Accent">#0099ee</color>
     <color name="color_Accent_inverse">#999999</color>
-    <color name="color_background">#fff</color>
+    <color name="color_background_white">#fff</color>
+    <color name="color_background_gray">#eeeeee</color>
     <color name="color_text_primary">#000</color>
     <color name="color_text_primary_inverse">#fff</color>
     <color name="color_text_secondary">#ffaaaa</color>

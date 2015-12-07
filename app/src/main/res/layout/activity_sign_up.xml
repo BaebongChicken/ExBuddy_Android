@@ -12,19 +12,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:gravity="center">
+        android:gravity="center_vertical|left">
 
         <TextView
             android:layout_width="@dimen/menu_width"
             android:layout_height="wrap_content"
             android:text="@string/signup_subtitle_1"
-            android:gravity="center" />
+            android:gravity="center_vertical|left" />
 
         <EditText
             android:layout_width="@dimen/menu_width"
             android:layout_height="wrap_content"
-            android:id="@+id/locationEdt"
-            android:layout_marginTop="10dp" />
+            android:id="@+id/nameEdt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_vertical|left"
+        android:background="@color/color_background_gray">
+
+        <TextView
+            android:layout_width="@dimen/menu_width"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_subtitle_2"
+            android:gravity="center_vertical|left" />
+
+        <Button
+            android:layout_width="@dimen/menu_width"
+            android:layout_height="25dp"
+            android:id="@+id/locationBtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_caption_1" />
     </LinearLayout>
 
     <LinearLayout
@@ -35,9 +59,9 @@
         android:gravity="center">
 
         <TextView
-            android:layout_width="@dimen/menu_width"
+            android:layout_width="@dimen/menu_width_extend"
             android:layout_height="wrap_content"
-            android:text="@string/signup_subtitle_2"
+            android:text="@string/signup_subtitle_3"
             android:gravity="center" />
 
 
@@ -47,110 +71,47 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp">
 
-            <TextView
+            <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#DDD"
+                android:background="@color/color_primary"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/Member"
+                android:text="@string/yes"
                 android:textSize="20dp"
                 android:layout_marginRight="5dp"
-                android:id="@+id/memberBtn" />
+                android:id="@+id/yesBtn" />
 
-            <TextView
+            <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#DDD"
+                android:background="@color/color_Accent"
                 android:gravity="center"
                 android:padding="10dp"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
-                android:id="@+id/coachBtn"
-                android:text="@string/Coach" />
+                android:id="@+id/noBtn"
+                android:text="@string/no" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="@dimen/menu_width"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signup_subtitle_3"
-            android:gravity="center"
-            android:id="@+id/textView" />
+            android:text="@string/next"
+            android:id="@+id/nextBtn"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical|right"
+            android:background="@color/color_primary"
+            android:textColor="@color/color_text_primary_inverse" />
+    </RelativeLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="@dimen/menu_width_extend"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/margin_top">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:id="@+id/interestedBtn1" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:id="@+id/interestedBtn2" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:id="@+id/interestedBtn3" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:id="@+id/interestedBtn4" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="@dimen/menu_width_extend"
-            android:layout_height="wrap_content"
-            android:text="@string/signup_caption_1"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/margin_top" />
-
-    </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signup_button_1"
-        android:id="@+id/nextBtn" />
 
 </LinearLayout>

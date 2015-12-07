@@ -24,14 +24,17 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activities.SignUpActivity"
             android:label="@string/title_activity_sign_up" />
-        <activity android:name=".activities.AdtlSignUpActivity" />
+
         <activity android:name=".activities.InterestedActsActivity" />
-        <activity android:name=".activities.SelectModeActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activities.SelectModeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.SignUp2Activity" />
+        <activity android:name=".activities.SignUp3Activity"></activity>
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.R;
 
-public class InterestedActsFragment_1 extends BaseFragment {
+public class InterestedActs1Fragment extends BaseFragment {
 
     public LinearLayout selectionSportsLyt ;
     public String[] selectionSportsArray = {"soccer", "baseball", "boarding", "skydiving"};

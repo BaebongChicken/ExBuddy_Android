@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context="kr.co.kj_studio.exbuddy.activities.SignUp2Activity"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_marginBottom="50dp">
+
+        <TextView
+            android:layout_width="@dimen/menu_width"
+            android:layout_height="wrap_content"
+            android:text="@string/signup2_subtitle_1" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="@dimen/menu_width_extend"
+            android:layout_height="300dp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_top" >
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:id="@+id/interestAct1Btn" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:id="@+id/interestAct2Btn" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:id="@+id/interestAct3Btn" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:id="@+id/interestAct4Btn" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="@dimen/menu_width_extend"
+            android:layout_height="wrap_content"
+            android:text="@string/signup2_caption_1"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:id="@+id/nextBtn"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical|right"
+            android:background="@color/color_primary"
+            android:textColor="@color/color_text_primary_inverse" />
+    </RelativeLayout>
+</RelativeLayout>

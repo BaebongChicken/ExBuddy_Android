@@ -1,37 +1,38 @@
 <resources>
 
-    <!--XML은 지금 이 형식이 주석이다-->
-
     <string name="app_name">ExBuddy</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
-    <!--//share-->
-    <string name="Member">Member</string>
-    <string name="Coach">Coach</string>
-    <!--//-->
+    <!--share-->
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
+    <string name="next">다음으로</string>
+
     <string name="Yourspecialityorjob">Your speciality or job</string>
     <string name="Location">Location</string>
     <string name="Profileline">Profile line</string>
     <string name="Aboutme">About me</string>
-    <!--//SignUpActivity-->
-    <string name="signup_subtitle_1">Enter your Location</string>
-    <string name="signup_subtitle_2">Member Or Coach?</string>
-    <string name="signup_subtitle_3">What are you interested in?</string>
-    <string name="signup_caption_1">You can choose Maximum 4 kinds</string>
-    <string name="signup_title">Sign Up</string>
-    <string name="signup_button_1">NEXT</string>
-    <string name="signupadtl_subtitle_1">Enter your additional information</string>
-    <string name="signupadtl_hint_1">Where are you from?</string>
-    <string name="signupadtl_hint_2">Speciality or Job?</string>
-    <string name="signupadtl_hint_3">Profile Line</string>
-    <string name="signupadtl_hint_4">About me</string>
-    <string name="title_activity_adtl_sign_up">AdtlSignUpActivity</string>
-    <string name="signupadtl_title">Additional Info</string>
+    <!--SignUpActivity-->
+    <string name="signup_title">기본정보입력</string>
+    <string name="signup_subtitle_1">이름을 입력 해 주세요</string>
+    <string name="signup_subtitle_2">자신의 위치를 입력 해 주세요</string>
+    <string name="signup_subtitle_3">운동 관련 코치나 트레이너 이신가요?</string>
+    <string name="signup_caption_1">더 나은 결과를 위해 동까지 입력해주세요</string>
+
+    <!--SignUp2Activity-->
+    <string name="signup2_title">운동종목선택</string>
+    <string name="signup2_subtitle_1">좋아하는 운동을 선택 해 주세요</string>
+    <string name="signup2_caption_1">최대 4개의 종목까지 선택 가능합니다</string>
+    <!--SignUp3Activity-->
+    <string name="signup3_title">추가정보입력</string>
+    <string name="signup3_subtitle_1">좋아하는 운동을 선택 해 주세요</string>
+    <string name="signup3_caption_1">최대 4개의 종목까지 선택 가능합니다</string>
+
     <!--//InterestedActsActivity-->
-    <string name="ia_tile">Choose your favorites</string>
+    <string name="InterestedActs_title">운동종목선택</string>
     <!--SelectModeActivity-->
     <string name="selectmode_item0">Comlete Missions</string>
     <string name="selectmode_item1">Find Groups to</string>

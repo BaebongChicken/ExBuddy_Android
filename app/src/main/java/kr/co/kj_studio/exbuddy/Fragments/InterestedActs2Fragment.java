@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import kr.co.kj_studio.exbuddy.R;
 
-public class InterestedActsFragment_2 extends BaseFragment {
+public class InterestedActs2Fragment extends BaseFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
