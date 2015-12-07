@@ -7,26 +7,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.activities.MissionDetailActivity;
 import kr.co.kj_studio.exbuddy.dataClass.MissionData;
+import kr.co.kj_studio.exbuddy.dataClass.UserData;
 
 /**
- * Created by KJ_Studio on 2015-12-07.
+ * Created by KJ_Studio on 2015-12-08.
  */
-public class MissionAdapter extends ArrayAdapter<MissionData>
+public class MemberAdapter extends ArrayAdapter<UserData>
 {
 
     Context mContext;
-    ArrayList<MissionData> mList;
+    ArrayList<UserData> mList;
     LayoutInflater inf;
 
-    public MissionAdapter(Context context, ArrayList<MissionData> list) {
-        super(context, R.layout.mission_list_item_1, R.id.titleTxt, list);
+    public MemberAdapter(Context context, ArrayList<UserData> list) {
+        super(context, R.layout.member_list_item_1, R.id.memberNameTxt, list);
 
         mContext = context;
         mList = list;
@@ -40,7 +40,7 @@ public class MissionAdapter extends ArrayAdapter<MissionData>
         if (position % 2 == 1) {
 
             if (row == null) {
-                row = inf.inflate(R.layout.mission_list_item_1, null);
+                row = inf.inflate(R.layout.member_list_item_1, null);
 
             }
             row.setOnClickListener(new View.OnClickListener() {
@@ -54,12 +54,11 @@ public class MissionAdapter extends ArrayAdapter<MissionData>
         else {
 
             if (row == null) {
-                row = inf.inflate(R.layout.mission_list_item_2, null);
-
+                row = inf.inflate(R.layout.member_list_item_2, null);
             }
 
-            FrameLayout missionLayoutLeft = (FrameLayout) row.findViewById(R.id.missionLayoutLeft);
-            missionLayoutLeft.setOnClickListener(new View.OnClickListener() {
+            FrameLayout rootLayoutLeft = (FrameLayout) row.findViewById(R.id.rootLayoutLeft);
+            rootLayoutLeft.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -68,19 +67,21 @@ public class MissionAdapter extends ArrayAdapter<MissionData>
                 }
             });
 
+            FrameLayout rootLayoutRight = (FrameLayout) row.findViewById(R.id.rootLayoutRight);
+            rootLayoutRight.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent mIntent = new Intent(mContext, MissionDetailActivity.class);
+                    mContext.startActivity(mIntent);
+                }
+            });
+            if (mList.size() % 3 == 1)
+            {
+                rootLayoutRight.setVisibility(View.INVISIBLE);
+            }
         }
         return row;
-    }
-
-    @Override
-    public int getViewTypeCount() {
-        return 2;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-
-        return position % 2;
     }
 
     @Override
@@ -93,5 +94,15 @@ public class MissionAdapter extends ArrayAdapter<MissionData>
 
             return mList.size() / 3 * 2 +1;
         }
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 2;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position % 2;
     }
 }

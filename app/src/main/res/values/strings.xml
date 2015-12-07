@@ -39,5 +39,7 @@
     <string name="selectmode_item1_execercisewith">Excercise With</string>
     <string name="selectmode_item2">Find Members to</string>
 
-
+    <!--MissionDetailActivity-->
+    <string name="missiondetail_comments">Comments</string>
+    <string name="missiondetail_title">Weekly Mission #1</string>
 </resources>

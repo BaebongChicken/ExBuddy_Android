@@ -43,6 +43,10 @@ public class MissionsFragment extends BaseFragment {
         mMissionList.add(new MissionData());
         mMissionList.add(new MissionData());
         mMissionList.add(new MissionData());
+        mMissionList.add(new MissionData());
+        mMissionList.add(new MissionData());
+        mMissionList.add(new MissionData());
+        mMissionList.add(new MissionData());
 
         missionListView.setAdapter(new MissionAdapter(getActivity(), mMissionList));
 
