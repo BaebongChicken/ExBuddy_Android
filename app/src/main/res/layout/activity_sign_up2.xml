@@ -16,9 +16,11 @@
         android:layout_marginBottom="50dp">
 
         <TextView
-            android:layout_width="@dimen/menu_width"
+            android:layout_width="@dimen/menu_width_extend"
             android:layout_height="wrap_content"
-            android:text="@string/signup2_subtitle_1" />
+            android:text="@string/signup2_subtitle_1"
+            android:padding="@dimen/textview_padding_all"
+            android:gravity="center" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -72,7 +74,9 @@
             android:layout_width="@dimen/menu_width_extend"
             android:layout_height="wrap_content"
             android:text="@string/signup2_caption_1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:padding="@dimen/textview_padding_all"
+            android:layout_marginTop="@dimen/margin_top" />
 
     </LinearLayout>
 

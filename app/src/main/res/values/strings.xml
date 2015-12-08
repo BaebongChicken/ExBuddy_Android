@@ -28,11 +28,19 @@
     <string name="signup2_caption_1">최대 4개의 종목까지 선택 가능합니다</string>
     <!--SignUp3Activity-->
     <string name="signup3_title">추가정보입력</string>
-    <string name="signup3_subtitle_1">좋아하는 운동을 선택 해 주세요</string>
-    <string name="signup3_caption_1">최대 4개의 종목까지 선택 가능합니다</string>
+    <string name="signup3_subtitle_1">성별</string>
+    <string name="signup3_subtitle_2">나이</string>
+    <string name="signup3_subtitle_3">특기 및 직업</string>
+    <string name="signup3_subtitle_4">다른 관심사</string>
+    <string name="signup3_subtitle_5">언어/Spoken Languages</string>
+    <string name="signup3_subtitle_6">학교 및 직장</string>
+    <string name="signup3_subtitle_7">한줄소개/Profile Line</string>
+    <string name="signup3_subtitle_8">자기소개/About me</string>
 
     <!--//InterestedActsActivity-->
     <string name="InterestedActs_title">운동종목선택</string>
+
+
     <!--SelectModeActivity-->
     <string name="selectmode_item0">Comlete Missions</string>
     <string name="selectmode_item1">Find Groups to</string>
