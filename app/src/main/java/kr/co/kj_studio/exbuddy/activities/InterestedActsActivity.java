@@ -1,11 +1,13 @@
 package kr.co.kj_studio.exbuddy.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,24 +21,26 @@ public class InterestedActsActivity extends BaseActivity {
 
     public ViewPager mViewPager;
     public PagerAdapter mPagerAdapter;
-    public InterestedActsActivity mIAActivity;
+    public static InterestedActsActivity mIAActivity;
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
     public InterestedActs1Fragment InterestedActs1Fragment;
     public InterestedActs2Fragment InterestedActsFragment_2;
     private Button sportsBtn;
     private Button fitnessBtn;
-
+    private int currentBtnNum = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interested_acts);
 
+        currentBtnNum = getIntent().getIntExtra("mBtnNum", 0);
+        Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_1 : " + currentBtnNum);
 
         setCustomActionbar();
         bindViews();
-        setValues(R.string.InterestedActs_title);
-        setupEvents();
+        setValues(R.string.interestedacts_title, View.VISIBLE);
+        setupEvents(R.string.next);
         setViewPager();
 
     }
@@ -53,13 +57,11 @@ public class InterestedActsActivity extends BaseActivity {
         mViewPager.setAdapter(mPagerAdapter);
         this.fitnessBtn = (Button) findViewById(R.id.fitnessBtn);
         this.sportsBtn = (Button) findViewById(R.id.sportsBtn);
-
     }
 
     @Override
-    public void setupEvents() {
-        super.setupEvents();
-
+    public void setupEvents(int stateBtnText) {
+        super.setupEvents(stateBtnText);
         sportsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,9 +75,19 @@ public class InterestedActsActivity extends BaseActivity {
                 mViewPager.setCurrentItem(1);
             }
         });
+
+        stateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(getApplicationContext(), InterestedActsLevelActivity.class);
+                mIntent.putExtra("mBtnNum",currentBtnNum);
+                startActivityForResult(mIntent, currentBtnNum);
+            }
+        });
     }
 
-    public void setViewPager(){
+
+    public void setViewPager() {
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -84,7 +96,7 @@ public class InterestedActsActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         sportsBtn.setBackgroundColor(getResources().getColor(R.color.color_background_white));
                         sportsBtn.setTextColor(getResources().getColor(R.color.color_text_primary));
@@ -107,7 +119,7 @@ public class InterestedActsActivity extends BaseActivity {
         });
     }
 
-    private void addFragments(){
+    private void addFragments() {
         fragList.add(InterestedActs1Fragment);
         fragList.add(InterestedActsFragment_2);
     }

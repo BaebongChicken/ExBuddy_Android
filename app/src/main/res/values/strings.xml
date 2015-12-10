@@ -9,12 +9,9 @@
     <!--share-->
     <string name="yes">예</string>
     <string name="no">아니오</string>
-    <string name="next">다음으로</string>
+    <string name="next">다음</string>
+    <string name="complete">완료</string>
 
-    <string name="Yourspecialityorjob">Your speciality or job</string>
-    <string name="Location">Location</string>
-    <string name="Profileline">Profile line</string>
-    <string name="Aboutme">About me</string>
     <!--SignUpActivity-->
     <string name="signup_title">기본정보입력</string>
     <string name="signup_subtitle_1">이름을 입력 해 주세요</string>
@@ -37,9 +34,17 @@
     <string name="signup3_subtitle_7">한줄소개/Profile Line</string>
     <string name="signup3_subtitle_8">자기소개/About me</string>
 
-    <!--//InterestedActsActivity-->
-    <string name="InterestedActs_title">운동종목선택</string>
+    <!--InterestedActsActivity-->
+    <string name="interestedacts_title">운동종목선택</string>
 
+    <!--InterestedActsLevelActivity-->
+    <string name="interestedactslevel_title">수준선택/Level</string>
+    <string name="interestedactslevel_subtitle_1">운동 수준을 선택해 주세요\nChoose Your Level</string>
+    <string name="interestedactslevel_caption_1">Pro</string>
+    <string name="interestedactslevel_caption_2">Amateur</string>
+    <string name="interestedactslevel_caption_3">Okay</string>
+    <string name="interestedactslevel_caption_4">Beginner</string>
+    <string name="interestedactslevel_caption_5">None</string>
 
     <!--SelectModeActivity-->
     <string name="selectmode_item0">Comlete Missions</string>

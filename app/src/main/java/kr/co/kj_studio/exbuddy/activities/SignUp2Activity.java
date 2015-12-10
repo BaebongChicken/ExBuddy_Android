@@ -2,6 +2,7 @@ package kr.co.kj_studio.exbuddy.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -60,6 +61,8 @@ public class SignUp2Activity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     Intent mIntent = new Intent(getApplicationContext(), InterestedActsActivity.class);
+                    Log.d("REQUEST_CODE", "" + mBtnNum);
+                    mIntent.putExtra("mBtnNum", mBtnNum);
                     startActivityForResult(mIntent, mBtnNum);
                 }
             });
@@ -72,5 +75,30 @@ public class SignUp2Activity extends BaseActivity {
         InterestedBtnArray.add(interestAct2Btn);
         InterestedBtnArray.add(interestAct3Btn);
         InterestedBtnArray.add(interestAct4Btn);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case 0:
+                Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 0);
+
+                break;
+            case 1:
+                Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 1);
+
+                break;
+            case 2:
+                Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 2);
+
+                break;
+            case 3:
+                Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 3);
+
+                break;
+
+        }
     }
 }

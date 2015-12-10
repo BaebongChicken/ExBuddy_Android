@@ -2,13 +2,13 @@ package kr.co.kj_studio.exbuddy.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -30,20 +30,27 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(getSupportActionBar()!=null)
         setCustomActionbar();
     }
 
     public static TextView mTitleTextView;
-    public static ImageButton okBtn;
-    public static ImageButton toggleBtn;
+    public static ImageButton rightBtn;
+    public static ImageButton leftBtn;
+    public static Button stateBtn;
 
     public void setupEvents() {
 
     }
 
+    public void setupEvents(int stateBtnText){
+        stateBtn.setVisibility(View.VISIBLE);
+        stateBtn.setText(stateBtnText);
+    }
     public void setupEvents(final Class<?> targetActivity) {
         final Class<?> mTargetActivity = targetActivity;
-        okBtn.setOnClickListener(new View.OnClickListener() {
+        rightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mIntent = new Intent(getApplicationContext(), mTargetActivity);
@@ -53,10 +60,12 @@ public class BaseActivity extends AppCompatActivity {
         });
     }
 
+
     public void bindViews() {
         mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
-        okBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
-        toggleBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
+        rightBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
+        leftBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
+        stateBtn = (Button)getSupportActionBar().getCustomView().findViewById(R.id.stateBtn);
     }
 
     public void setValues(int title) {
@@ -65,15 +74,15 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void setValues(int title, int okView) {
+    public void setValues(int title, int rightView) {
         mTitleTextView.setText(title);
-        okBtn.setVisibility(okView);
+        rightBtn.setVisibility(rightView);
     }
 
-    public void setValues(int title, int okView, int toggleView) {
+    public void setValues(int title, int rightView, int leftView) {
         mTitleTextView.setText(title);
-        okBtn.setVisibility(okView);
-        toggleBtn.setVisibility(toggleView);
+        rightBtn.setVisibility(rightView);
+        leftBtn.setVisibility(leftView);
     }
 
 

@@ -12,9 +12,9 @@ import android.widget.TextView;
 public class FontChanger {
 
     public static Typeface setTypeFace(Context context){
-        Typeface aa;
-        aa = Typeface.createFromAsset(context.getAssets(), "NanumBarunGothic.ttf"); // 외부폰트 사용
-        return aa;
+        Typeface mFont;
+        mFont = Typeface.createFromAsset(context.getAssets(), "NanumBarunGothic.ttf"); // 외부폰트 사용
+        return mFont;
     }
 
     public static void setGlobalFont(Typeface mTypeface, Context context, View view) {

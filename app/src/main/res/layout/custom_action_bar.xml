@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:layout_gravity="fill"
-    android:background="#ffff"
+    android:background="@color/color_background_white"
     android:padding="0dp"
     android:gravity="center"
     android:orientation="vertical">
@@ -31,7 +31,7 @@
             android:id="@+id/toggleBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="#0000"
+            android:background="@color/color_background_invisible"
             android:src="@drawable/check3"
             android:padding="10dp"
             android:scaleType="fitCenter"
@@ -43,7 +43,7 @@
             android:id="@+id/addBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="#0000"
+            android:background="@color/color_background_invisible"
             android:visibility="gone"
             android:layout_gravity="right|center_vertical"
             android:text="+"/>
@@ -52,13 +52,22 @@
             android:id="@+id/okBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="#0000"
+            android:background="@color/color_background_invisible"
             android:src="@drawable/check3"
             android:padding="10dp"
             android:scaleType="fitCenter"
             android:visibility="gone"
             android:layout_gravity="right|center_vertical"
             android:text="+"/>
+
+        <Button
+            android:id="@+id/stateBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/color_background_white"
+            android:visibility="gone"
+            android:layout_gravity="right|center_vertical"
+            />
 
     </FrameLayout>
 

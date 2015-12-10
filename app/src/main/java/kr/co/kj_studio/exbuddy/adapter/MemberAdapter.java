@@ -5,30 +5,26 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.activities.MissionDetailActivity;
-import kr.co.kj_studio.exbuddy.dataClass.MissionData;
 import kr.co.kj_studio.exbuddy.dataClass.UserData;
 
 /**
  * Created by KJ_Studio on 2015-12-08.
  */
-public class MemberAdapter extends ArrayAdapter<UserData>
+public class MemberAdapter extends BaseCustomAdapter<UserData>
 {
 
-    Context mContext;
     ArrayList<UserData> mList;
     LayoutInflater inf;
 
     public MemberAdapter(Context context, ArrayList<UserData> list) {
         super(context, R.layout.member_list_item_1, R.id.memberNameTxt, list);
 
-        mContext = context;
         mList = list;
         inf = LayoutInflater.from(mContext);
 
@@ -81,6 +77,8 @@ public class MemberAdapter extends ArrayAdapter<UserData>
                 rootLayoutRight.setVisibility(View.INVISIBLE);
             }
         }
+        setGlobalFont(row);
+
         return row;
     }
 
