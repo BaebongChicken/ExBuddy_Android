@@ -13,8 +13,8 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-import kr.co.kj_studio.exbuddy.Fragments.InterestedActs1Fragment;
-import kr.co.kj_studio.exbuddy.Fragments.InterestedActs2Fragment;
+import kr.co.kj_studio.exbuddy.Fragments.InterestedActsSportsFragment;
+import kr.co.kj_studio.exbuddy.Fragments.InterestedActsFitnessFragment;
 import kr.co.kj_studio.exbuddy.R;
 
 public class InterestedActsActivity extends BaseActivity {
@@ -22,12 +22,17 @@ public class InterestedActsActivity extends BaseActivity {
     public ViewPager mViewPager;
     public PagerAdapter mPagerAdapter;
     public static InterestedActsActivity mIAActivity;
+
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
-    public InterestedActs1Fragment InterestedActs1Fragment;
-    public InterestedActs2Fragment InterestedActsFragment_2;
+
+    public InterestedActsSportsFragment InterestedActsSportsFragment;
+    public InterestedActsFitnessFragment interestedActsFitnessFragment;
     private Button sportsBtn;
     private Button fitnessBtn;
     private int currentBtnNum = 100;
+
+    public static String interestedActsName = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +51,24 @@ public class InterestedActsActivity extends BaseActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==RESULT_OK){
+            setResult(RESULT_OK);
+            finish();
+        }
+    }
+
+    @Override
     public void bindViews() {
         super.bindViews();
-        InterestedActs1Fragment = new InterestedActs1Fragment();
-        InterestedActsFragment_2 = new InterestedActs2Fragment();
+        this.InterestedActsSportsFragment = new InterestedActsSportsFragment();
+        this.interestedActsFitnessFragment = new InterestedActsFitnessFragment();
         addFragments();
         mIAActivity = InterestedActsActivity.this;
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        mPagerAdapter = new PageAdapter(getSupportFragmentManager());
-        mViewPager.setAdapter(mPagerAdapter);
+        this.mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        this.mPagerAdapter = new PageAdapter(getSupportFragmentManager());
+        this.mViewPager.setAdapter(mPagerAdapter);
         this.fitnessBtn = (Button) findViewById(R.id.fitnessBtn);
         this.sportsBtn = (Button) findViewById(R.id.sportsBtn);
     }
@@ -120,8 +134,8 @@ public class InterestedActsActivity extends BaseActivity {
     }
 
     private void addFragments() {
-        fragList.add(InterestedActs1Fragment);
-        fragList.add(InterestedActsFragment_2);
+        fragList.add(InterestedActsSportsFragment);
+        fragList.add(interestedActsFitnessFragment);
     }
 
     private class PageAdapter extends FragmentStatePagerAdapter {

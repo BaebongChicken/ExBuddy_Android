@@ -39,14 +39,24 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="+"
-                    android:id="@+id/interestAct1Btn" />
+                    android:id="@+id/interestAct1Btn"
+                    android:visibility="visible"
+                    android:background="@color/color_primary_Soft"
+                    android:layout_margin="@dimen/margin_all_1"
+                    android:textColor="@color/color_text_primary_inverse"
+                    android:textSize="18dp" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="+"
-                    android:id="@+id/interestAct2Btn" />
+                    android:id="@+id/interestAct2Btn"
+                    android:visibility="invisible"
+                    android:background="@color/color_primary"
+                    android:layout_margin="@dimen/margin_all_1"
+                    android:textColor="@color/color_text_primary_inverse"
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -59,14 +69,24 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="+"
-                    android:id="@+id/interestAct3Btn" />
+                    android:id="@+id/interestAct3Btn"
+                    android:visibility="invisible"
+                    android:background="@color/color_primary_Dark"
+                    android:layout_margin="@dimen/margin_all_1"
+                    android:textColor="@color/color_text_primary_inverse"
+                    android:textSize="18dp" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="+"
-                    android:id="@+id/interestAct4Btn" />
+                    android:id="@+id/interestAct4Btn"
+                    android:visibility="invisible"
+                    android:background="@color/color_Accent"
+                    android:layout_margin="@dimen/margin_all_1"
+                    android:textColor="@color/color_text_primary_inverse"
+                    android:textSize="18dp" />
             </LinearLayout>
         </LinearLayout>
 

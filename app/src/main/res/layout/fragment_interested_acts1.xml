@@ -6,106 +6,10 @@
     android:layout_height="match_parent"
     android:background="#FFF"
     android:orientation="vertical"
-    tools:context=".Fragments.InterestedActs1Fragment"
-    android:paddingTop="50dp"
-    android:id="@+id/selectionSportsLyt">
+    tools:context=".Fragments.InterestedActsSportsFragment"
+    android:id="@+id/selectionSportsLyt"
+    android:padding="2dp">
 
 
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:id="@+id/selectSportBtn1" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn2"-->
-            <!--android:layout_weight="1" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn3"-->
-            <!--android:layout_weight="1" />-->
-    <!--</LinearLayout>-->
-
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" >-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:id="@+id/selectSportBtn4" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn5"-->
-            <!--android:layout_weight="1" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn6"-->
-            <!--android:layout_weight="1" />-->
-    <!--</LinearLayout>-->
-
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" >-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:id="@+id/selectSportBtn7" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn8"-->
-            <!--android:layout_weight="1" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn9"-->
-            <!--android:layout_weight="1"-->
-            <!--/>-->
-    <!--</LinearLayout>-->
-
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" >-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:id="@+id/selectSportBtn10" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn11"-->
-            <!--android:layout_weight="1" />-->
-
-        <!--<ImageButton-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:id="@+id/selectSportBtn12"-->
-            <!--android:layout_weight="1" />-->
-    <!--</LinearLayout>-->
 
 </LinearLayout>
