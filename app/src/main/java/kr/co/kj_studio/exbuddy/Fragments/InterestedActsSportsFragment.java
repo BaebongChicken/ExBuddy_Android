@@ -18,7 +18,7 @@ public class InterestedActsSportsFragment extends BaseFragment {
 
     public String[] selectionSportsArray = {"soccer", "baseball", "boarding", "skydiving"};
     public ArrayList<Button> selectSportsBtnArray = new ArrayList<Button>();
-    public ArrayList<LinearLayout> childViewArray = new ArrayList<LinearLayout>();
+    public ArrayList<LinearLayout> childViewSportsArray = new ArrayList<LinearLayout>();
     public LinearLayout selectionSportsLyt;
 
 
@@ -30,12 +30,12 @@ public class InterestedActsSportsFragment extends BaseFragment {
         makeSportsBtn();
         makeSportsLayout();
         Log.d("check arrays", "size of sports btn Array : " + selectSportsBtnArray.size());
-        Log.d("check arrays", "size of child view Array : " + childViewArray.size());
+        Log.d("check arrays", "size of child view Sports Array : " + childViewSportsArray.size());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.d("check arrays", "View Creating...");
+        Log.d("check arrays", "View Creating...<Spt>");
         layoutResId = R.layout.fragment_interested_acts1;
         View v = super.onCreateView(inflater, container, savedInstanceState);
         selectionSportsLyt = (LinearLayout) v.findViewById(R.id.selectionSportsLyt);
@@ -75,7 +75,7 @@ public class InterestedActsSportsFragment extends BaseFragment {
             LinearLayout mLayout = new LinearLayout(getActivity());
             mLayout.setLayoutParams(mParams);
             mLayout.setOrientation(LinearLayout.HORIZONTAL);
-            childViewArray.add(mLayout);
+            childViewSportsArray.add(mLayout);
         }
     }
 
@@ -83,9 +83,9 @@ public class InterestedActsSportsFragment extends BaseFragment {
         Log.d("check arrays", "setButtonsInLayout processing...START");
         LinearLayout.LayoutParams mViewParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 
-        for (int l = 0; l < childViewArray.size(); l++) {
+        for (int l = 0; l < childViewSportsArray.size(); l++) {
             Log.d("check arrays", "setButtonsInLayout processing...terms : " + l);
-            LinearLayout mView = childViewArray.get(l);
+            LinearLayout mView = childViewSportsArray.get(l);
             for (int k = 0; k < 3; k++) {
                 if (selectSportsBtnArray.size() < (l * 3 + k) + 1) {
                     TextView emptyView = new TextView(getActivity());

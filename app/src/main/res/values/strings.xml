@@ -9,8 +9,9 @@
     <!--share-->
     <string name="yes">예</string>
     <string name="no">아니오</string>
-    <string name="next">다음</string>
+    <string name="next">다음으로</string>
     <string name="complete">완료</string>
+    <string name="start">시작하기</string>
 
     <!--SignUpActivity-->
     <string name="signup_title">기본정보입력</string>
@@ -33,6 +34,10 @@
     <string name="signup3_subtitle_6">학교 및 직장</string>
     <string name="signup3_subtitle_7">한줄소개/Profile Line</string>
     <string name="signup3_subtitle_8">자기소개/About me</string>
+
+    <!--SignUp4Activity-->
+    <string name="signup4_title">사진추가</string>
+    <string name="signup4_subtitle_1">사진을 추가해주세요\nAdd Your Pictures</string>
 
     <!--InterestedActsActivity-->
     <string name="interestedacts_title">운동종목선택</string>

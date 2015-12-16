@@ -1,5 +1,6 @@
 package kr.co.kj_studio.exbuddy.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.utils.FontChanger;
 
@@ -19,6 +22,14 @@ import kr.co.kj_studio.exbuddy.utils.FontChanger;
  * Created by JinHee on 2015-11-26.
  */
 public class BaseActivity extends AppCompatActivity {
+
+    public static ArrayList<Activity> activities = new ArrayList<Activity>();
+
+    public static TextView mTitleTextView;
+    public static ImageButton rightBtn;
+    public static ImageButton leftBtn;
+    public static Button stateBtn;
+
 
     @Override
     public void setContentView(int layoutResID) {
@@ -30,24 +41,27 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if(getSupportActionBar()!=null)
-        setCustomActionbar();
+        activities.add(this);
+        Log.d("BaseActivity", "ActvityLists : " + activities);
+        if (getSupportActionBar() != null)
+            setCustomActionbar();
     }
 
-    public static TextView mTitleTextView;
-    public static ImageButton rightBtn;
-    public static ImageButton leftBtn;
-    public static Button stateBtn;
+    public void finishAllActivities(){
+        for (int i = 0 ; i < activities.size(); i ++){
+            activities.get(i).finish();
+        }
+    }
 
     public void setupEvents() {
 
     }
 
-    public void setupEvents(int stateBtnText){
+    public void setupEvents(int stateBtnText) {
         stateBtn.setVisibility(View.VISIBLE);
         stateBtn.setText(stateBtnText);
     }
+
     public void setupEvents(final Class<?> targetActivity) {
         final Class<?> mTargetActivity = targetActivity;
         rightBtn.setOnClickListener(new View.OnClickListener() {
@@ -65,12 +79,12 @@ public class BaseActivity extends AppCompatActivity {
         mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
         rightBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
         leftBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
-        stateBtn = (Button)getSupportActionBar().getCustomView().findViewById(R.id.stateBtn);
+        stateBtn = (Button) getSupportActionBar().getCustomView().findViewById(R.id.stateBtn);
     }
 
     public void setValues(int title) {
         mTitleTextView.setText(title);
-        Log.d("Base", "setValue Processing... title : "+mTitleTextView.getText());
+        Log.d("Base", "setValue Processing... title : " + mTitleTextView.getText());
 
     }
 
@@ -84,9 +98,6 @@ public class BaseActivity extends AppCompatActivity {
         rightBtn.setVisibility(rightView);
         leftBtn.setVisibility(leftView);
     }
-
-
-
 
 
     public void setCustomActionbar() {
