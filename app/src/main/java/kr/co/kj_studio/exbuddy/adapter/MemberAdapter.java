@@ -37,6 +37,7 @@ public class MemberAdapter extends BaseCustomAdapter<UserData>
 
             if (row == null) {
                 row = inf.inflate(R.layout.member_list_item_1, null);
+                setGlobalFont(row);
 
             }
             row.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +52,7 @@ public class MemberAdapter extends BaseCustomAdapter<UserData>
 
             if (row == null) {
                 row = inf.inflate(R.layout.member_list_item_2, null);
+                setGlobalFont(row);
             }
 
             FrameLayout rootLayoutLeft = (FrameLayout) row.findViewById(R.id.rootLayoutLeft);
@@ -77,7 +79,6 @@ public class MemberAdapter extends BaseCustomAdapter<UserData>
                 rootLayoutRight.setVisibility(View.INVISIBLE);
             }
         }
-        setGlobalFont(row);
 
         return row;
     }

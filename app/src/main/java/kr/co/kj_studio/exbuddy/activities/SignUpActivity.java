@@ -37,6 +37,7 @@ public class SignUpActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent mIntent = new Intent(getApplicationContext(), SignUp2Activity.class);
                 startActivity(mIntent);
+                finish();
             }
         });
     }

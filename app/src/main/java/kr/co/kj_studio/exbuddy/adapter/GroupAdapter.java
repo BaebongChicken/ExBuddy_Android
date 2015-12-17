@@ -34,6 +34,7 @@ public class GroupAdapter extends BaseCustomAdapter<GroupData>
         View row = convertView;
         if (row == null) {
             row = inf.inflate(R.layout.group_list_item, null);
+            setGlobalFont(row);
 
         }
         row.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +45,6 @@ public class GroupAdapter extends BaseCustomAdapter<GroupData>
             }
         });
 
-        setGlobalFont(row);
         return row;
     }
 

@@ -39,6 +39,7 @@ public class MissionAdapter extends BaseCustomAdapter<MissionData>
 
             if (row == null) {
                 row = inf.inflate(R.layout.mission_list_item_1, null);
+                setGlobalFont(row);
 
             }
             row.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +54,7 @@ public class MissionAdapter extends BaseCustomAdapter<MissionData>
 
             if (row == null) {
                 row = inf.inflate(R.layout.mission_list_item_2, null);
+                setGlobalFont(row);
 
             }
 
@@ -67,7 +69,6 @@ public class MissionAdapter extends BaseCustomAdapter<MissionData>
             });
 
         }
-        setGlobalFont(row);
 
         return row;
     }
