@@ -1,5 +1,6 @@
 package kr.co.kj_studio.exbuddy.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -32,9 +34,10 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout dlDrawer;
     private ListView lvNavList;
     LinearLayout drawLayout;
-    private String[] navItems = {"Profile", "Mission", "Groups", "Members"};
+    private String[] navItems = {"Messages", "Mission", "#WeExercise", "Members", "My Friends", "My WeExercise", "More"};
     public ImageButton toggleBtn;
     public TextView mTitleTextView;
+    FrameLayout userProfileLayout;
 
 
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
@@ -113,6 +116,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        userProfileLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(MainActivity.this, UserProfileActivity.class);
+                startActivity(mIntent);
+            }
+        });
+
         backPressCloseHandler = new BackPressCloseHandler(this);
     }
 
@@ -128,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
         drawLayout = (LinearLayout) findViewById(R.id.drawLayout);
         dlDrawer = (DrawerLayout) findViewById(R.id.dl_activity_main_drawer);
         lvNavList = (ListView) findViewById(R.id.lv_activity_main_nav_list);
+        userProfileLayout = (FrameLayout) findViewById(R.id.userProfileLayout);
         toggleBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
         mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
 

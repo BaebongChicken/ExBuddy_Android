@@ -86,6 +86,10 @@ public class BaseActivity extends AppCompatActivity {
         mTitleTextView.setText(title);
         Log.d("Base", "setValue Processing... title : " + mTitleTextView.getText());
 
+
+    }
+    public void setValues() {
+
     }
 
     public void setValues(int title, int rightView) {

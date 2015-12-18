@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.R;
+import kr.co.kj_studio.exbuddy.activities.GroupDetailActivity;
 import kr.co.kj_studio.exbuddy.activities.MissionDetailActivity;
 import kr.co.kj_studio.exbuddy.dataClass.GroupData;
 
@@ -40,7 +41,7 @@ public class GroupAdapter extends BaseCustomAdapter<GroupData>
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(mContext, MissionDetailActivity.class);
+                Intent mIntent = new Intent(mContext, GroupDetailActivity.class);
                 mContext.startActivity(mIntent);
             }
         });
@@ -50,13 +51,6 @@ public class GroupAdapter extends BaseCustomAdapter<GroupData>
 
     @Override
     public int getCount() {
-        if (mList.size() % 3 == 0) {
-
-            return mList.size() / 3 * 2;
-        }
-        else {
-
-            return mList.size() / 3 * 2 +1;
-        }
+        return mList.size();
     }
 }

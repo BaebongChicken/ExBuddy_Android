@@ -65,24 +65,26 @@
         android:orientation="vertical"
         android:visibility="visible">
         
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/userProfileLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
+            android:layout_height="200dp"
             android:gravity="center">
 
             <ImageView
-                android:padding="5dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 android:src="@drawable/check3"/>
 
             <TextView
+                android:layout_gravity="bottom"
                 android:id="@+id/userNameTxt"
+                android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="이름을 띄워줍시다" />
-        </LinearLayout>
+        </FrameLayout>
 
 
         <ListView

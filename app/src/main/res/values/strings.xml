@@ -60,4 +60,10 @@
     <!--MissionDetailActivity-->
     <string name="missiondetail_comments">Comments</string>
     <string name="missiondetail_title">Weekly Mission #1</string>
+
+    <!--UserProfileActivity-->
+    <!--Group_detailAcitivity-->
+    <string name="group_participate">참가하기</string>
+    <string name="host">호스트</string>
+    <string name="group_qna">Comments and Q&amp;A</string>
 </resources>

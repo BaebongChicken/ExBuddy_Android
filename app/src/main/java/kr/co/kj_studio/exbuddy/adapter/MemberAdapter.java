@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.activities.MissionDetailActivity;
+import kr.co.kj_studio.exbuddy.activities.UserProfileActivity;
 import kr.co.kj_studio.exbuddy.dataClass.UserData;
 
 /**
@@ -43,7 +44,7 @@ public class MemberAdapter extends BaseCustomAdapter<UserData>
             row.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent mIntent = new Intent(mContext, MissionDetailActivity.class);
+                    Intent mIntent = new Intent(mContext, UserProfileActivity.class);
                     mContext.startActivity(mIntent);
                 }
             });
@@ -60,7 +61,7 @@ public class MemberAdapter extends BaseCustomAdapter<UserData>
                 @Override
                 public void onClick(View v) {
 
-                    Intent mIntent = new Intent(mContext, MissionDetailActivity.class);
+                    Intent mIntent = new Intent(mContext, UserProfileActivity.class);
                     mContext.startActivity(mIntent);
                 }
             });
@@ -70,7 +71,7 @@ public class MemberAdapter extends BaseCustomAdapter<UserData>
                 @Override
                 public void onClick(View v) {
 
-                    Intent mIntent = new Intent(mContext, MissionDetailActivity.class);
+                    Intent mIntent = new Intent(mContext, UserProfileActivity.class);
                     mContext.startActivity(mIntent);
                 }
             });
@@ -102,6 +103,15 @@ public class MemberAdapter extends BaseCustomAdapter<UserData>
 
     @Override
     public int getItemViewType(int position) {
-        return position % 2;
+
+        if (position % 2 == 0) {
+
+            return 0;
+        }
+        else {
+
+            return 1;
+        }
+
     }
 }
