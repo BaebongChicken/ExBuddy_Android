@@ -1,6 +1,5 @@
 package kr.co.kj_studio.exbuddy.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import kr.co.kj_studio.exbuddy.R;
@@ -12,6 +11,7 @@ public class GroupDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_detail);
 
+        // 살려놨땅!!
 
     }
 }
