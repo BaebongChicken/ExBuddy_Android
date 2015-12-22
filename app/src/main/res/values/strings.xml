@@ -12,6 +12,8 @@
     <string name="next">다음으로</string>
     <string name="complete">완료</string>
     <string name="start">시작하기</string>
+    <string name="remove"><u>삭제</u></string>
+    <string name="modify"><u>수정</u></string>
 
     <!--SignUpActivity-->
     <string name="signup_title">기본정보입력</string>
@@ -79,4 +81,3 @@
     <string name="myweex">내가 만든 Weex</string>
     <string name="myjoinweex">내가 참가하는 Weex</string>
 </resources>
-
