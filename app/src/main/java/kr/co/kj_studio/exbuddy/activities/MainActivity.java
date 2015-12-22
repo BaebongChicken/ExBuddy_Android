@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -24,7 +25,11 @@ import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.Fragments.FindGroupFragment;
 import kr.co.kj_studio.exbuddy.Fragments.FindMemberFragment;
+import kr.co.kj_studio.exbuddy.Fragments.MessageFragment;
 import kr.co.kj_studio.exbuddy.Fragments.MissionsFragment;
+import kr.co.kj_studio.exbuddy.Fragments.MoreFragment;
+import kr.co.kj_studio.exbuddy.Fragments.MyFriendsFragment;
+import kr.co.kj_studio.exbuddy.Fragments.MyWeexFragment;
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.utils.BackPressCloseHandler;
 
@@ -37,16 +42,22 @@ public class MainActivity extends AppCompatActivity {
     private String[] navItems = {"Messages", "Mission", "#WeExercise", "Members", "My Friends", "My WeExercise", "More"};
     public ImageButton toggleBtn;
     public TextView mTitleTextView;
+    Button addBtn;
+    ImageButton searchBtn;
+    ImageButton searchDetailBtn;
     FrameLayout userProfileLayout;
 
 
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
     Fragment currentFragment;
 
+    LinearLayout fragment_mainContainer0;
     LinearLayout fragment_mainContainer1;
     LinearLayout fragment_mainContainer2;
     LinearLayout fragment_mainContainer3;
     LinearLayout fragment_mainContainer4;
+    LinearLayout fragment_mainContainer5;
+    LinearLayout fragment_mainContainer6;
     LinearLayout currentLayout;
 
     @Override
@@ -65,18 +76,26 @@ public class MainActivity extends AppCompatActivity {
     void addAllFrag()
     {
 
+        fragList.add(new MessageFragment());
         fragList.add(new MissionsFragment());
         fragList.add(new FindGroupFragment());
         fragList.add(new FindMemberFragment());
+        fragList.add(new MyFriendsFragment());
+        fragList.add(new MyWeexFragment());
+        fragList.add(new MoreFragment());
 
         final FragmentTransaction ft = getSupportFragmentManager()
                 .beginTransaction();
 
-        ft.add(R.id.fragment_mainContainer1, fragList.get(0));
-        ft.add(R.id.fragment_mainContainer2, fragList.get(1));
-        ft.add(R.id.fragment_mainContainer3, fragList.get(2));
+        ft.add(R.id.fragment_mainContainer0, fragList.get(0));
+        ft.add(R.id.fragment_mainContainer1, fragList.get(1));
+        ft.add(R.id.fragment_mainContainer2, fragList.get(2));
+        ft.add(R.id.fragment_mainContainer3, fragList.get(3));
+        ft.add(R.id.fragment_mainContainer4, fragList.get(4));
+        ft.add(R.id.fragment_mainContainer5, fragList.get(5));
+        ft.add(R.id.fragment_mainContainer6, fragList.get(6));
 
-        currentFragment = fragList.get(0);
+        currentFragment = fragList.get(1);
         currentLayout = fragment_mainContainer1;
         ft.commit();
 
@@ -124,6 +143,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                Intent mIntent = new Intent(MainActivity.this, UserProfileActivity.class);
+//                startActivity(mIntent);
+            }
+        });
+
         backPressCloseHandler = new BackPressCloseHandler(this);
     }
 
@@ -142,12 +170,18 @@ public class MainActivity extends AppCompatActivity {
         userProfileLayout = (FrameLayout) findViewById(R.id.userProfileLayout);
         toggleBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
         mTitleTextView = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.titleTxt);
+        addBtn = (Button) getSupportActionBar().getCustomView().findViewById(R.id.addBtn);
+        searchBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.searchBtn);
+        searchDetailBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.searchDetailBtn);
 
 
+        fragment_mainContainer0 = (LinearLayout) findViewById(R.id.fragment_mainContainer0);
         fragment_mainContainer1 = (LinearLayout) findViewById(R.id.fragment_mainContainer1);
         fragment_mainContainer2 = (LinearLayout) findViewById(R.id.fragment_mainContainer2);
         fragment_mainContainer3 = (LinearLayout) findViewById(R.id.fragment_mainContainer3);
         fragment_mainContainer4 = (LinearLayout) findViewById(R.id.fragment_mainContainer4);
+        fragment_mainContainer5 = (LinearLayout) findViewById(R.id.fragment_mainContainer5);
+        fragment_mainContainer6 = (LinearLayout) findViewById(R.id.fragment_mainContainer6);
 
     }
 
@@ -189,24 +223,70 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> adapter, View view, int position,
                                 long id) {
+            if (position == 0) {
 
-            if (position == 1) {
+                currentLayout.setVisibility(View.GONE);
+                fragment_mainContainer0.setVisibility(View.VISIBLE);
+                currentLayout = fragment_mainContainer0;
+                addBtn.setVisibility(View.GONE);
+                searchBtn.setVisibility(View.GONE);
+                searchDetailBtn.setVisibility(View.GONE);
+
+            }
+            else if (position == 1) {
 
                 currentLayout.setVisibility(View.GONE);
                 fragment_mainContainer1.setVisibility(View.VISIBLE);
                 currentLayout = fragment_mainContainer1;
+                addBtn.setVisibility(View.GONE);
+                searchBtn.setVisibility(View.GONE);
+                searchDetailBtn.setVisibility(View.GONE);
+
             }
             else if (position == 2) {
 
                 currentLayout.setVisibility(View.GONE);
                 fragment_mainContainer2.setVisibility(View.VISIBLE);
                 currentLayout = fragment_mainContainer2;
+                addBtn.setVisibility(View.VISIBLE);
+                searchBtn.setVisibility(View.VISIBLE);
+                searchDetailBtn.setVisibility(View.VISIBLE);
             }
             else if (position == 3) {
 
                 currentLayout.setVisibility(View.GONE);
                 fragment_mainContainer3.setVisibility(View.VISIBLE);
                 currentLayout = fragment_mainContainer3;
+                addBtn.setVisibility(View.GONE);
+                searchBtn.setVisibility(View.VISIBLE);
+                searchDetailBtn.setVisibility(View.VISIBLE);
+            }
+            else if (position == 4) {
+
+                currentLayout.setVisibility(View.GONE);
+                fragment_mainContainer4.setVisibility(View.VISIBLE);
+                currentLayout = fragment_mainContainer4;
+                addBtn.setVisibility(View.GONE);
+                searchBtn.setVisibility(View.VISIBLE);
+                searchDetailBtn.setVisibility(View.VISIBLE);
+            }
+            else if (position == 5) {
+
+                currentLayout.setVisibility(View.GONE);
+                fragment_mainContainer5.setVisibility(View.VISIBLE);
+                currentLayout = fragment_mainContainer5;
+                addBtn.setVisibility(View.GONE);
+                searchBtn.setVisibility(View.VISIBLE);
+                searchDetailBtn.setVisibility(View.VISIBLE);
+            }
+            else if (position == 6) {
+
+                currentLayout.setVisibility(View.GONE);
+                fragment_mainContainer6.setVisibility(View.VISIBLE);
+                currentLayout = fragment_mainContainer6;
+                addBtn.setVisibility(View.GONE);
+                searchBtn.setVisibility(View.VISIBLE);
+                searchDetailBtn.setVisibility(View.VISIBLE);
             }
 
 

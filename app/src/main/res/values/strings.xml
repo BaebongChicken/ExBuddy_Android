@@ -66,4 +66,17 @@
     <string name="group_participate">참가하기</string>
     <string name="host">호스트</string>
     <string name="group_qna">Comments and Q&amp;A</string>
+    <string name="report">신고</string>
+    <!--FindGroupFragment-->
+    <string name="lightning">번개</string>
+    <string name="club">클럽</string>
+    <string name="place">장소</string>
+
+    <!--MyFriends-->
+    <string name="myfriend">내친구</string>
+    <string name="friend_request">친구요청</string>
+    <!--MyWeex-->
+    <string name="myweex">내가 만든 Weex</string>
+    <string name="myjoinweex">내가 참가하는 Weex</string>
 </resources>
+

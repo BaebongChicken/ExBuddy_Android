@@ -40,7 +40,8 @@
         <activity android:name=".activities.UserProfileActivity" />
         <activity android:name=".activities.InterestedActsLevelActivity" />
         <activity android:name=".activities.SignUp4Activity" />
-        <activity android:name=".activities.GroupDetailActivity"></activity>
+        <activity android:name=".activities.GroupDetailActivity" />
+        <activity android:name=".activities.CheckAllMembersActivity"></activity>
     </application>
 
 </manifest>

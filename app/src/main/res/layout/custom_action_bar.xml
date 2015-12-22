@@ -8,24 +8,10 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="match_parent">
-
-
-        <TextView
-            android:id="@+id/titleTxt"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="titleTxt"
-            android:textColor="@color/color_text_primary_inverse"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:background="@color/color_primary" />
-
-        <!--프레임레이아웃은 밑에 깔린놈이 화면 위로 드러난다.-->
-        <!--이미지버튼이 텍스트뷰 뒤에 깔려서 안나오길래 앞으로 끄집어냈다.-->
 
         <ImageButton
             android:id="@+id/toggleBtn"
@@ -38,6 +24,49 @@
             android:visibility="gone"
             android:layout_gravity="left|center_vertical"/>
 
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="titleTxt"
+            android:paddingLeft="10dp"
+            android:textColor="@color/color_text_primary_inverse"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@color/color_primary" />
+
+        <!--프레임레이아웃은 밑에 깔린놈이 화면 위로 드러난다.-->
+        <!--이미지버튼이 텍스트뷰 뒤에 깔려서 안나오길래 앞으로 끄집어냈다.-->
+
+
+
+        <ImageButton
+            android:id="@+id/searchBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/color_background_invisible"
+            android:src="@drawable/check3"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:layout_gravity="right|center_vertical"
+            android:text="+"/>
+
+
+        <ImageButton
+            android:id="@+id/searchDetailBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/color_background_invisible"
+            android:src="@drawable/check3"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:layout_gravity="right|center_vertical"
+            android:text="+"/>
+
 
         <Button
             android:id="@+id/addBtn"
@@ -45,11 +74,26 @@
             android:layout_height="40dp"
             android:background="@color/color_background_invisible"
             android:visibility="gone"
+            android:textColor="#FFF"
+            android:textSize="30dp"
             android:layout_gravity="right|center_vertical"
             android:text="+"/>
 
         <ImageButton
             android:id="@+id/okBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/color_background_invisible"
+            android:src="@drawable/check3"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:layout_gravity="right|center_vertical"
+            android:text="+"/>
+
+
+        <ImageButton
+            android:id="@+id/moreBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@color/color_background_invisible"
@@ -69,7 +113,7 @@
             android:layout_gravity="right|center_vertical"
             />
 
-    </FrameLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

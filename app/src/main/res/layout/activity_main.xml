@@ -16,10 +16,20 @@
             android:layout_height="50dp" />
 
         <LinearLayout
+            android:id="@+id/fragment_mainContainer0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/fragment_mainContainer1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:visibility="visible"
             android:orientation="vertical" >
         </LinearLayout>
 
@@ -53,6 +63,25 @@
             android:orientation="vertical" >
         </LinearLayout>
 
+
+        <LinearLayout
+            android:id="@+id/fragment_mainContainer5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/fragment_mainContainer6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+        </LinearLayout>
     </LinearLayout>
 
 

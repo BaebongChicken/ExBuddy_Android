@@ -29,6 +29,9 @@ public class BaseActivity extends AppCompatActivity {
     public static ImageButton rightBtn;
     public static ImageButton leftBtn;
     public static Button stateBtn;
+    public static ImageButton searchBtn;
+    public static ImageButton searchDetailBtn;
+    public static ImageButton moreBtn;
 
 
     @Override
@@ -80,6 +83,11 @@ public class BaseActivity extends AppCompatActivity {
         rightBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.okBtn);
         leftBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.toggleBtn);
         stateBtn = (Button) getSupportActionBar().getCustomView().findViewById(R.id.stateBtn);
+        moreBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.moreBtn);
+        searchBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.searchBtn);
+        searchDetailBtn = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.searchDetailBtn);
+
+
     }
 
     public void setValues(int title) {
