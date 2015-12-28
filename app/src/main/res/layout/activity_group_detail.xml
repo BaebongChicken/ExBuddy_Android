@@ -7,6 +7,7 @@
     tools:context="kr.co.kj_studio.exbuddy.activities.GroupDetailActivity">
 
     <ScrollView
+        android:id="@+id/mScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -237,16 +238,25 @@
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#A0A0A0" />
             <FrameLayout
                 android:id="@+id/googleMapLayout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="지도가 들어올 자리입니다."/>
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    class="kr.co.kj_studio.exbuddy.Fragments.WorkaroundMapFragment" />
             </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#A0A0A0" />
 
             <TextView
                 android:layout_width="wrap_content"
