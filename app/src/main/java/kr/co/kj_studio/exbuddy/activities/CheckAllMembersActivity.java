@@ -7,6 +7,7 @@ import kr.co.kj_studio.exbuddy.R;
 
 public class CheckAllMembersActivity extends AppCompatActivity {
 
+    // 커밋할 거리를 만들자
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
