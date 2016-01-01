@@ -10,24 +10,109 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.Profile;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.security.MessageDigest;
+import java.util.Arrays;
 
 import kr.co.kj_studio.exbuddy.R;
+import kr.co.kj_studio.exbuddy.utils.ServerUtil;
 
 public class LoginActivity extends BaseActivity {
 
 
     Button facebookLoginBtn;
+    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        FacebookSdk.sdkInitialize(LoginActivity.this);
 
         bindViews();
         setupEvents();
 
         getAppKeyHash();
+
+
+        callbackManager = CallbackManager.Factory.create();
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+                Log.d("CHO", "fbLogin Success");
+
+                Profile loginProfile = Profile.getCurrentProfile();
+
+                Log.d("loginProfile", loginProfile.getName() + " / " + loginProfile.getId());
+
+//                String pictureURI = "https://graph.facebook.com/" + loginProfile.getId() + "/picture?type=large";
+//                Log.d("CHO", "loginProfile = " + loginProfile.getId() + "," + loginProfile.getName() + "," + pictureURI);
+
+//                Log.d("login get token", loginResult.getAccessToken().getToken());
+
+                GraphRequest request = GraphRequest.newMeRequest(
+                        loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
+                                try {
+
+                                    Log.d("GraphResponse", object.toString());
+
+                                    ServerUtil.facebookLogin(LoginActivity.this, object.getString("name"), object.getString("id"), object.getString("email"), new ServerUtil.JsonResponseHandler() {
+                                        @Override
+                                        public void onResponse(JSONObject json) {
+
+                                            try {
+                                                JSONObject userProfile = json.getJSONObject("userProfile");
+    //                            ContextUtil.setUSER_ID(LoginActivity.this, userProfile.getInt("id"));
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+
+                                            Intent mIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                                            startActivity(mIntent);
+                                            finish();
+                                        }
+                                    });
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                );
+//
+
+                Bundle parameters = new Bundle();
+                parameters.putString("fields", "id,name,email");
+                request.setParameters(parameters);
+                request.executeAsync();
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+
+            }
+        });
     }
 
 
@@ -51,9 +136,8 @@ public class LoginActivity extends BaseActivity {
         facebookLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(mIntent);
-                finish();
+                String[] permissions = {"public_profile", "user_friends", "email"};
+                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList(permissions));
             }
         });
     }
@@ -63,4 +147,11 @@ public class LoginActivity extends BaseActivity {
         facebookLoginBtn = (Button) findViewById(R.id.facebookLoginBtn);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }
