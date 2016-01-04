@@ -275,12 +275,14 @@ public class MainActivity extends AppCompatActivity {
             }
             else if (position == 2) {
 
+                ((FindGroupFragment) fragList.get(2)).showLocationActivity();
                 currentLayout.setVisibility(View.GONE);
                 fragment_mainContainer2.setVisibility(View.VISIBLE);
                 currentLayout = fragment_mainContainer2;
                 addBtn.setVisibility(View.VISIBLE);
                 searchBtn.setVisibility(View.VISIBLE);
                 searchDetailBtn.setVisibility(View.VISIBLE);
+
             }
             else if (position == 3) {
 

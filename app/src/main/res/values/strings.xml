@@ -83,4 +83,9 @@
     <!--MyWeex-->
     <string name="myweex">내가 만든 Weex</string>
     <string name="myjoinweex">내가 참가하는 Weex</string>
+
+
+    <!--FindLocationActivity-->
+    <string name="type_location_plz">검색할 장소를 입력하세요.</string>
+    <string name="FindLocationActivity_title">장소 찾기</string>
 </resources>
