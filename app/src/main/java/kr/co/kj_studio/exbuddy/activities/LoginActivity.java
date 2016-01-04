@@ -27,6 +27,8 @@ import java.security.MessageDigest;
 import java.util.Arrays;
 
 import kr.co.kj_studio.exbuddy.R;
+import kr.co.kj_studio.exbuddy.dataClass.UserData;
+import kr.co.kj_studio.exbuddy.utils.ContextUtil;
 import kr.co.kj_studio.exbuddy.utils.ServerUtil;
 
 public class LoginActivity extends BaseActivity {
@@ -78,7 +80,10 @@ public class LoginActivity extends BaseActivity {
 
                                             try {
                                                 JSONObject userProfile = json.getJSONObject("userProfile");
-    //                            ContextUtil.setUSER_ID(LoginActivity.this, userProfile.getInt("id"));
+                                                UserData userData = UserData.getUserDataFromJsonWhenRegister(userProfile);
+
+                                                ContextUtil.setLoggedIn(LoginActivity.this, true);
+                                                ContextUtil.setUserDataWhenRegister(LoginActivity.this, userData);
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }

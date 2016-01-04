@@ -17,9 +17,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 
@@ -31,7 +35,9 @@ import kr.co.kj_studio.exbuddy.Fragments.MoreFragment;
 import kr.co.kj_studio.exbuddy.Fragments.MyFriendsFragment;
 import kr.co.kj_studio.exbuddy.Fragments.MyWeexFragment;
 import kr.co.kj_studio.exbuddy.R;
+import kr.co.kj_studio.exbuddy.dataClass.UserData;
 import kr.co.kj_studio.exbuddy.utils.BackPressCloseHandler;
+import kr.co.kj_studio.exbuddy.utils.ContextUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton searchBtn;
     ImageButton searchDetailBtn;
     FrameLayout userProfileLayout;
+    ImageView profileImg;
 
 
     ArrayList<Fragment> fragList = new ArrayList<Fragment>();
@@ -59,11 +66,17 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout fragment_mainContainer5;
     LinearLayout fragment_mainContainer6;
     LinearLayout currentLayout;
+    private Toolbar myawesometoolbar;
+    private TextView userNameTxt;
+    private ListView lvactivitymainnavlist;
+    private DrawerLayout dlactivitymaindrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(MainActivity.this).build();
+        ImageLoader.getInstance().init(config);
         setCustomActionbar();
         bindViews();
         setupEvents();
@@ -161,6 +174,15 @@ public class MainActivity extends AppCompatActivity {
         lvNavList.setOnItemClickListener(new DrawerItemClickListener());
         mTitleTextView.setText(R.string.app_name);
         toggleBtn.setVisibility(View.VISIBLE);
+
+        UserData myData = ContextUtil.getUserData(MainActivity.this);
+
+        ImageLoader.getInstance().displayImage(myData.profilePhoto, profileImg);
+        userNameTxt.setText(myData.name);
+
+//        profileImg
+
+
     }
 
     public void bindViews() {
@@ -183,6 +205,14 @@ public class MainActivity extends AppCompatActivity {
         fragment_mainContainer5 = (LinearLayout) findViewById(R.id.fragment_mainContainer5);
         fragment_mainContainer6 = (LinearLayout) findViewById(R.id.fragment_mainContainer6);
 
+
+        this.dlactivitymaindrawer = (DrawerLayout) findViewById(R.id.dl_activity_main_drawer);
+        this.drawLayout = (LinearLayout) findViewById(R.id.drawLayout);
+        this.lvactivitymainnavlist = (ListView) findViewById(R.id.lv_activity_main_nav_list);
+        this.userProfileLayout = (FrameLayout) findViewById(R.id.userProfileLayout);
+        profileImg = (ImageView) findViewById(R.id.profileImg);
+        this.userNameTxt = (TextView) findViewById(R.id.userNameTxt);
+        this.myawesometoolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
     }
 
     @Override

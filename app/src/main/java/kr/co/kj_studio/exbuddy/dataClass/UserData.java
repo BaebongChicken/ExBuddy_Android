@@ -13,11 +13,11 @@ public class UserData implements Serializable {
     // 사용자 정보에 넣을 항목이 결정되면 여기에 형식 맞춰서 저장하면 된다.
 
 
-    public String userId;
-    public String email;
-    public String phoneNum;
     public String name;
-    public DateTime birthDate;
+    public String uid;
+    public String email;
+    public String profilePhoto;
+    public String phoneNum;
 
 
     // JSON에서 UserData 뽑아낼때 최대한 편한 코드르 구상해봤다.
@@ -31,11 +31,26 @@ public class UserData implements Serializable {
 
         try {
             userData = new UserData();
-            userData.userId = json.getString("userId");
+            userData.uid = json.getString("uid");
             userData.email = json.getString("email");
-            userData.phoneNum = json.getString("phoneNum");
             userData.name = json.getString("name");
-            userData.birthDate = DateTime.parse(json.getString("birthDate"));
+            userData.profilePhoto = json.getString("profilePhoto");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return userData;
+    }
+
+    public static  UserData getUserDataFromJsonWhenRegister(JSONObject json) {
+        UserData userData = null;
+
+        try {
+            userData = new UserData();
+            userData.uid = json.getString("uid");
+            userData.email = json.getString("email");
+            userData.name = json.getString("name");
+            userData.profilePhoto = json.getString("profilePhoto");
         } catch (JSONException e) {
             e.printStackTrace();
         }
