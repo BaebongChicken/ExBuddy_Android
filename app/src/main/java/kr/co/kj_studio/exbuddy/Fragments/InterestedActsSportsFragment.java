@@ -58,7 +58,11 @@ public class InterestedActsSportsFragment extends BaseFragment {
                 @Override
                 public void onClick(View v) {
                     InterestedActsActivity.interestedActsName = selectionSportsArray[mCounter];
-                    Log.d("IA Contents","IA CONTENTS : <EVENT NAME> "+ InterestedActsActivity.interestedActsName);
+                    Log.d("IA Contents", "IA CONTENTS : <EVENT NAME> " + InterestedActsActivity.interestedActsName);
+
+                    ((InterestedActsActivity) getActivity()).startLevelActivity();
+
+
                 }
             });
             selectSportsBtnArray.add(mBtn);

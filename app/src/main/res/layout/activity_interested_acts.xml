@@ -4,42 +4,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="kr.co.kj_studio.exbuddy.activities.InterestedActsActivity"
-    android:gravity="center_horizontal">
+    tools:context="kr.co.kj_studio.exbuddy.activities.InterestedActsActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="@dimen/frag_height"
-        android:background="@color/color_background_white">
+        android:background="@color/color_background_white"
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Sports"
             android:id="@+id/sportsBtn"
-            android:layout_weight="1"
-            android:layout_margin="1dp"
-            android:textColor="@color/color_text_primary"
-            android:background="@color/color_background_white" />
-
-        <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Fitness"
-            android:id="@+id/fitnessBtn"
-            android:layout_weight="1"
             android:layout_margin="1dp"
-            android:textColor="@color/color_text_primary_inverse"
-            android:background="@color/color_primary" />
+            android:layout_weight="1"
+            android:background="@color/color_background_white"
+            android:text="Sports"
+            android:textColor="@color/color_text_primary" />
+
+        <Button
+            android:id="@+id/fitnessBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@color/color_primary"
+            android:text="Fitness"
+            android:textColor="@color/color_text_primary_inverse" />
     </LinearLayout>
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/viewpager"
         android:layout_gravity="center_horizontal"
-        android:background="@color/color_background_white" />
+        android:background="@color/color_background_white">
+
+
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

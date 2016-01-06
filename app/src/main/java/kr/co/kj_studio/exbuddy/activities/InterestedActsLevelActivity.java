@@ -1,5 +1,6 @@
 package kr.co.kj_studio.exbuddy.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ public class InterestedActsLevelActivity extends BaseActivity {
 
     public static String interestedActsLevel = "";
 
+    InterestedActsData interestedActsData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class InterestedActsLevelActivity extends BaseActivity {
 
         setCustomActionbar();
         bindViews();
+        interestedActsData = (InterestedActsData) getIntent().getSerializableExtra("interestedActsData");
         setValues(R.string.interestedactslevel_title);
         setupEvents(R.string.complete);
 
@@ -84,6 +87,12 @@ public class InterestedActsLevelActivity extends BaseActivity {
                     interestedActsLevel = mBtn.getText().toString();
                     Log.d("IA Contents", "IA CONTENTS : <EVENT LEVEL> " + interestedActsLevel);
 
+                    interestedActsData.actsLevel = mBtn.getText().toString();
+
+                    Intent mIntent = new Intent();
+                    mIntent.putExtra("interestedActsData", interestedActsData);
+                    setResult(RESULT_OK, mIntent);
+                    finish();
                 }
             });
         }

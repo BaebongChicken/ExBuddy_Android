@@ -109,6 +109,11 @@
     <string name="시간">시간</string>
     <string name="정기모임_정해지지않음">정기모임/정해지지않음</string>
     <string name="인원">인원</string>
+    <string name="모집인원">모집인원</string>
     <string name="상세설명">상세설명</string>
+    <string name="모임명을_입력해주세요">모임명을 입력해주세요.</string>
+    <string name="운동종목을_입력해주세요">운동종목을 입력해주세요.</string>
+    <string name="장소를_입력해주세요">장소를 입력해주세요.</string>
+    <string name="터치해서_장소검색">터치해서 장소검색</string>
 
 </resources>

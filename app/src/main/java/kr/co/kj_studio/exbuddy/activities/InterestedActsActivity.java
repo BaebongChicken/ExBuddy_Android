@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import kr.co.kj_studio.exbuddy.Fragments.InterestedActsSportsFragment;
 import kr.co.kj_studio.exbuddy.Fragments.InterestedActsFitnessFragment;
 import kr.co.kj_studio.exbuddy.R;
+import kr.co.kj_studio.exbuddy.dataClass.InterestedActsData;
 
 public class InterestedActsActivity extends BaseActivity {
 
@@ -33,6 +34,9 @@ public class InterestedActsActivity extends BaseActivity {
 
     public static String interestedActsName = "";
 
+    public static String activityName = "";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +52,30 @@ public class InterestedActsActivity extends BaseActivity {
         setupEvents(R.string.next);
         setViewPager();
 
+        activityName = getIntent().getStringExtra("activityName");
+
+        Log.d("activityName", activityName);
     }
+
+    public void startLevelActivity() {
+
+        Intent mIntent = new Intent(getApplicationContext(), InterestedActsLevelActivity.class);
+        InterestedActsData interestedActsData = new InterestedActsData();
+        interestedActsData.actsName = interestedActsName;
+        mIntent.putExtra("interestedActsData", interestedActsData);
+        mIntent.putExtra("mBtnNum", currentBtnNum);
+        startActivityForResult(mIntent, currentBtnNum);
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode==RESULT_OK){
-            setResult(RESULT_OK);
+            Intent mIntent = new Intent();
+
+            mIntent.putExtra("interestedActsData", data.getSerializableExtra("interestedActsData"));
+            setResult(RESULT_OK, mIntent);
             finish();
         }
     }

@@ -22,6 +22,8 @@ public class SignUp2Activity extends BaseActivity {
     private Button interestAct4Btn;
     public int interestActsCount = 0;
 
+    static final int REQ_FOR_INTERSTED_ACT = 100;
+
     public static ArrayList<InterestedActsData> interestedActsDataArray = new ArrayList<InterestedActsData>();
 
     @Override
@@ -37,7 +39,6 @@ public class SignUp2Activity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setVisibilityByActsCount();
     }
 
     @Override
@@ -75,9 +76,10 @@ public class SignUp2Activity extends BaseActivity {
                     if (interestedActsDataArray.size() != 0 && interestedActsDataArray.size() > mBtnNum) {
                         interestedActsDataArray.remove(mBtnNum);
                     }
+                    mIntent.putExtra("activityName", "SignUp2Activity");
                     Log.d("REQUEST_CODE", "" + mBtnNum);
-                    mIntent.putExtra("mBtnNum", mBtnNum);
-                    startActivityForResult(mIntent, mBtnNum);
+//                    mIntent.putExtra("mBtnNum", mBtnNum);
+                    startActivityForResult(mIntent, REQ_FOR_INTERSTED_ACT);
                 }
             });
         }
@@ -92,7 +94,7 @@ public class SignUp2Activity extends BaseActivity {
     }
 
     private void setVisibilityByActsCount() {
-        switch (interestActsCount) {
+        switch (interestedActsDataArray.size()) {
             case 0:
                 for (int btnNum = 0; btnNum < 1; btnNum++) {
                     InterestedBtnArray.get(btnNum).setVisibility(View.VISIBLE);
@@ -128,45 +130,55 @@ public class SignUp2Activity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d("interestedActsDataArray", "resultCode is " + resultCode + ", requestCode is " + requestCode);
-        if (resultCode == RESULT_OK) {
-            switch (requestCode) {
-                case 0:
-                    setTextToBtn();
-                    interestActsCount = 1;
 
-
-                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 0);
-                    break;
-                case 1:
-
-                    setTextToBtn();
-
-
-                    interestActsCount = 2;
-
-                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 1);
-
-                    break;
-                case 2:
-
-                    setTextToBtn();
-
-                    interestActsCount = 3;
-
-                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 2);
-
-                    break;
-                case 3:
-
-                    setTextToBtn();
-
-                    interestActsCount = 4;
-
-                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 3);
-
-                    break;
-
+        if (requestCode == REQ_FOR_INTERSTED_ACT) {
+            if (resultCode == RESULT_OK) {
+                InterestedActsData interestedActsData = (InterestedActsData) data.getSerializableExtra("interestedActsData");
+                interestedActsDataArray.add(interestedActsData);
+                setTextToBtn();
+                setVisibilityByActsCount();
             }
         }
+//
+//        if (resultCode == RESULT_OK) {
+//            switch (requestCode) {
+//                case 0:
+//                    setTextToBtn();
+//                    interestActsCount = 1;
+//
+//
+//                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 0);
+//                    break;
+//                case 1:
+//
+//                    setTextToBtn();
+//
+//
+//                    interestActsCount = 2;
+//
+//                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 1);
+//
+//                    break;
+//                case 2:
+//
+//                    setTextToBtn();
+//
+//                    interestActsCount = 3;
+//
+//                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 2);
+//
+//                    break;
+//                case 3:
+//
+//                    setTextToBtn();
+//
+//                    interestActsCount = 4;
+//
+//                    Log.d("REQUEST_CODE", "(REQUEST_CODE)RECEIVED_3 : " + 3);
+//
+//                    break;
+//
+//            }
+//        }
     }
 }

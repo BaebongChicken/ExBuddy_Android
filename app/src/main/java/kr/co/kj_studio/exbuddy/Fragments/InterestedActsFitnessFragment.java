@@ -56,6 +56,8 @@ public class InterestedActsFitnessFragment extends BaseFragment {
                 public void onClick(View v) {
                     InterestedActsActivity.interestedActsName = selectionFitnessArray[mCounter];
                     Log.d("IA Contents", "IA CONTENTS : <EVENT NAME> " + InterestedActsActivity.interestedActsName);
+
+                    ((InterestedActsActivity) getActivity()).startLevelActivity();
                 }
             });
             selectFitnessBtnArray.add(mBtn);
