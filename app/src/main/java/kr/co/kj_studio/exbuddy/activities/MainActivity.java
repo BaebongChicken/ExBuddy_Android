@@ -283,6 +283,15 @@ public class MainActivity extends AppCompatActivity {
                 searchBtn.setVisibility(View.VISIBLE);
                 searchDetailBtn.setVisibility(View.VISIBLE);
 
+                addBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent(MainActivity.this, SelectGroupTypeActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
             }
             else if (position == 3) {
 

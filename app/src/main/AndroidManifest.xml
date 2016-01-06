@@ -74,7 +74,9 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".activities.FindLocationActivity"></activity>
+        <activity android:name=".activities.FindLocationActivity" />
+        <activity android:name=".activities.EditGroupActivity" />
+        <activity android:name=".activities.SelectGroupTypeActivity"></activity>
     </application>
 
 </manifest>

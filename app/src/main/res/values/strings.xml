@@ -88,4 +88,27 @@
     <!--FindLocationActivity-->
     <string name="type_location_plz">검색할 장소를 입력하세요.</string>
     <string name="FindLocationActivity_title">장소 찾기</string>
+
+
+    <!--SelectGroupTypeActivity-->
+    <string name="페이지_만들기">페이지 만들기</string>
+    <string name="페이지를_선택해주세요">페이지를 선택해주세요</string>
+    <string name="comehere">모여봐</string>
+    <string name="vs_mode">VS. Mode</string>
+    <string name="lessonOrEvent">레슨/이벤트</string>
+    <string name="school">학교</string>
+    <string name="company">회사</string>
+    <string name="normal_club">일반 동호회</string>
+    <string name="공공장소">공공장소</string>
+    <string name="개인장소">개인장소</string>
+    <string name="운동용품">운동용품</string>
+
+
+    <string name="제목">제목</string>
+    <string name="운동_종목">운동 종목</string>
+    <string name="시간">시간</string>
+    <string name="정기모임_정해지지않음">정기모임/정해지지않음</string>
+    <string name="인원">인원</string>
+    <string name="상세설명">상세설명</string>
+
 </resources>
