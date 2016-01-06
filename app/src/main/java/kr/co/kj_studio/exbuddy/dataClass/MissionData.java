@@ -1,5 +1,8 @@
 package kr.co.kj_studio.exbuddy.dataClass;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 
 /**
@@ -7,8 +10,27 @@ import java.io.Serializable;
  */
 public class MissionData implements Serializable {
 
+    public String id;
     public String title;
-    public String backImgAddress;
+    public String imagePath;
+    public String createAt;
 
+
+    public static  MissionData getMissionDataFromJson(JSONObject json) {
+        MissionData missionData = null;
+
+        try {
+            missionData = new MissionData();
+            missionData.id = json.getString("id");
+            missionData.title = json.getString("title");
+            missionData.imagePath = json.getString("imagePath");
+            missionData.createAt = json.getString("createAt");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return missionData;
+    }
 
 }
