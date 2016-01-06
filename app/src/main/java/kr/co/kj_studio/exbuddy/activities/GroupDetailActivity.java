@@ -126,6 +126,14 @@ public class GroupDetailActivity extends BaseActivity {
             }
         });
 
+//        searchDetailBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent mIntent = new Intent(GroupDetailActivity.this, pageFilteringActivity.class);
+//                startActivity(mIntent);
+//            }
+//        });
+
         moreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,5 +160,6 @@ public class GroupDetailActivity extends BaseActivity {
     public void setValues() {
         super.setValues();
         moreBtn.setVisibility(View.VISIBLE);
+//        searchDetailBtn.setVisibility(View.VISIBLE);
     }
 }
