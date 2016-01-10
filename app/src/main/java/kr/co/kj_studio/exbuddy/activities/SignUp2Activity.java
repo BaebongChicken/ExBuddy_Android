@@ -5,11 +5,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.dataClass.InterestedActsData;
+import kr.co.kj_studio.exbuddy.dataClass.UserData;
+import kr.co.kj_studio.exbuddy.utils.ContextUtil;
+import kr.co.kj_studio.exbuddy.utils.ServerUtil;
 
 public class SignUp2Activity extends BaseActivity {
 
@@ -26,14 +32,44 @@ public class SignUp2Activity extends BaseActivity {
 
     public static ArrayList<InterestedActsData> interestedActsDataArray = new ArrayList<InterestedActsData>();
 
+    UserData mUserData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up2);
         setCustomActionbar();
+
+        mUserData = ContextUtil.getUserData(SignUp2Activity.this);
         bindViews();
         setValues(R.string.signup2_title);
         setupEvents();
+    }
+
+    @Override
+    public void setValues(int title) {
+        super.setValues(title);
+
+        if (mUserData.activityAndLevel.equals("")) {
+
+        }
+        else {
+            String[] interests = mUserData.activityAndLevel.split(",");
+            for (String s : interests) {
+                String[] data = s.split("/");
+                InterestedActsData interestedActsData = new InterestedActsData();
+
+                interestedActsData.actsName = data[0];
+                interestedActsData.actsLevel = data[1];
+
+                interestedActsDataArray.add(interestedActsData);
+            }
+        }
+
+        setTextToBtn();
+        setVisibilityByActsCount();
+
+
     }
 
     @Override
@@ -61,8 +97,21 @@ public class SignUp2Activity extends BaseActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(getApplicationContext(), SignUp3Activity.class);
-                startActivity(mIntent);
+
+
+                String interestString = makeIntersts();
+                mUserData.activityAndLevel = interestString;
+
+                ServerUtil.registerUser(SignUp2Activity.this, mUserData, new ServerUtil.JsonResponseHandler() {
+                    @Override
+                    public void onResponse(JSONObject json) {
+
+                        ContextUtil.setUserData(SignUp2Activity.this, mUserData);
+                        Intent mIntent = new Intent(getApplicationContext(), SignUp3Activity.class);
+                        startActivity(mIntent);
+                    }
+                });
+
 //                finish();
             }
         });
@@ -83,6 +132,22 @@ public class SignUp2Activity extends BaseActivity {
                 }
             });
         }
+    }
+
+    private String makeIntersts() {
+        String result = "";
+        int count=0;
+        for (InterestedActsData d: interestedActsDataArray) {
+            result += d.actsName+"/"+d.actsLevel+",";
+            count++;
+        }
+
+        if (!result.equals("")) {
+
+            result = result.substring(0, result.length()-1);
+        }
+
+        return result;
     }
 
 

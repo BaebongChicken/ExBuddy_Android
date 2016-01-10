@@ -104,6 +104,12 @@
     <string name="운동용품">운동용품</string>
 
 
+    <string-array name="ages_spinner_item">
+        <item>10대</item>
+        <item>20대</item>
+        <item>30대</item>
+    </string-array>
+
     <string name="제목">제목</string>
     <string name="운동_종목">운동 종목</string>
     <string name="시간">시간</string>
@@ -115,5 +121,11 @@
     <string name="운동종목을_입력해주세요">운동종목을 입력해주세요.</string>
     <string name="장소를_입력해주세요">장소를 입력해주세요.</string>
     <string name="터치해서_장소검색">터치해서 장소검색</string>
+    <string name="이름을_입력해_주세요">이름을 입력해 주세요.</string>
+    <string name="잠시만_기다려주세요">잠시만 기다려주세요..</string>
+    <string name="남자">남자</string>
+    <string name="여자">여자</string>
+    <string name="기타">기타</string>
+    <!--<string name="잠시만_기다려주세요">하나 .</string>-->
 
 </resources>

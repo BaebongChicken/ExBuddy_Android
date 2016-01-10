@@ -80,10 +80,10 @@ public class LoginActivity extends BaseActivity {
 
                                             try {
                                                 JSONObject userProfile = json.getJSONObject("userProfile");
-                                                UserData userData = UserData.getUserDataFromJsonWhenRegister(userProfile);
+                                                UserData userData = UserData.getUserDataFromJson(userProfile);
 
                                                 ContextUtil.setLoggedIn(LoginActivity.this, true);
-                                                ContextUtil.setUserDataWhenRegister(LoginActivity.this, userData);
+                                                ContextUtil.setUserData(LoginActivity.this, userData);
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }

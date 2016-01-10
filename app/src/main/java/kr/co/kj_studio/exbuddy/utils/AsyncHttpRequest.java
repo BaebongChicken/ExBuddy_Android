@@ -14,6 +14,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+import kr.co.kj_studio.exbuddy.R;
+
 
 public class AsyncHttpRequest {
 
@@ -145,9 +147,10 @@ public class AsyncHttpRequest {
 				if (mContext != null && isInsert) {
 
 					mProgress = new ProgressDialog(mContext);
+					mProgress.setMessage(mContext.getResources().getString(R.string.잠시만_기다려주세요));
 					mProgress .getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-					// mProgress.setTitle( "" );
+//					mProgress.setTitle( );
 					mProgress.show();
 
 					if (mResponseHandler != null)

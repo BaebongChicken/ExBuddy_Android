@@ -10,6 +10,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import kr.co.kj_studio.exbuddy.dataClass.UserData;
+
 public class ServerUtil {
 	private static final String TAG = ServerUtil.class.getSimpleName();
 
@@ -67,14 +69,33 @@ public class ServerUtil {
 	}
 
 
-	public static void registerUser(final Context context, final JsonResponseHandler handler) {
+	public static void registerUser(final Context context, final UserData userData, final JsonResponseHandler handler) {
 		String url = BASE_URL + "registerUser";
-		//		String registrationId = ContextUtil.getRegistrationId(context);
+//		UserData userData = ContextUtil.getUserData(context);
 
 		Map<String, Object> data = new HashMap<String, Object>();
-//		data.put("userPhoneNum", objectData.userPhoneNum);
+		data.put("id", userData.id+"");
+		data.put("name", userData.name);
+		data.put("uid", userData.uid);
+		data.put("email", userData.email);
+		data.put("location", userData.location);
+		data.put("geoLocation", userData.geoLocation);
+		data.put("isTrainer", userData.isTrainer? 1+"" : 0+"");
+		data.put("activityAndLevel", userData.activityAndLevel);
+		data.put("gender", userData.gender);
+		data.put("age", userData.age);
+		data.put("speciality", userData.speciality);
+		data.put("concern", userData.concern);
+		data.put("spokenLanguage", userData.spokenLanguage);
+		data.put("belong", userData.belong);
+		data.put("profileLine", userData.profileLine);
+		data.put("aboutMe", userData.aboutMe);
+		data.put("profilePhoto", userData.profilePhoto);
+		data.put("imagePaths", userData.imagePaths);
+		data.put("os", "Android");
+		data.put("deviceToken", "tempDeviceToken");
 
-		AsyncHttpRequest.post(context, url,  data, false, new AsyncHttpRequest.HttpResponseHandler() {
+		AsyncHttpRequest.post(context, url,  data, true, new AsyncHttpRequest.HttpResponseHandler() {
 
 			@Override
 			public boolean onPrepare() {
