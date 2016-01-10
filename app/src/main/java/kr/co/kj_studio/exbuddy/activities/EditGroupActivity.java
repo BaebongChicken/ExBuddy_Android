@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,13 +23,18 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 import kr.co.kj_studio.exbuddy.R;
+import kr.co.kj_studio.exbuddy.dataClass.DateTime;
 import kr.co.kj_studio.exbuddy.dataClass.GroupData;
 import kr.co.kj_studio.exbuddy.dataClass.InterestedActsData;
+import kr.co.kj_studio.exbuddy.utils.ContextUtil;
+import kr.co.kj_studio.exbuddy.utils.ServerUtil;
 
 public class EditGroupActivity extends BaseActivity {
 
@@ -57,13 +63,21 @@ public class EditGroupActivity extends BaseActivity {
     private TextView startTimeTxt;
 
     private Calendar mStartDate = Calendar.getInstance();
+    private final static SimpleDateFormat sDateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    private final static SimpleDateFormat sDateTimeSecFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd (E)");
     private SimpleDateFormat mTimeFormat = new SimpleDateFormat("a h시 mm분");
+    private ImageView largeCategoryImg;
+
+    ArrayList<String> categories = ContextUtil.getGroupCategoryNameArray();
+    int[] categoryStrings = ContextUtil.getGroupCategoryStringArray();
+    private LinearLayout dateLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_group);
+
         setCustomActionbar();
         bindViews();
         setupEvents();
@@ -74,7 +88,17 @@ public class EditGroupActivity extends BaseActivity {
     public void setValues() {
         super.setValues();
         mGroupData = (GroupData) getIntent().getSerializableExtra("groupData");
-        categoryTxt.setText(mGroupData.category);
+        int categoryIndex = categories.indexOf(mGroupData.category);
+
+        if (categoryIndex < 3) {
+            largeCategoryTxt.setText(R.string.comehere);
+        } else if (categoryIndex < 6) {
+            largeCategoryTxt.setText(R.string.club);
+        } else if (categoryIndex < 9) {
+            largeCategoryTxt.setText(R.string.place);
+        }
+
+        categoryTxt.setText(categoryStrings[categoryIndex]);
         setDateText();
         mTitleTextView.setText(R.string.페이지_만들기);
     }
@@ -82,11 +106,32 @@ public class EditGroupActivity extends BaseActivity {
     @Override
     public void setupEvents() {
         super.setupEvents();
+
+        notConfirmedBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                    dateLayout.setVisibility(View.GONE);
+                } else {
+                    dateLayout.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
+
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 makeGroupData();
+                ServerUtil.registerGroup(EditGroupActivity.this, mGroupData, new ServerUtil.JsonResponseHandler() {
+                    @Override
+                    public void onResponse(JSONObject json) {
+                        Toast.makeText(EditGroupActivity.this, "서버에는 추가됐습니다.", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                });
             }
         });
 
@@ -180,7 +225,7 @@ public class EditGroupActivity extends BaseActivity {
             return;
         }
 
-        if (interestedActsData.actsName == null || interestedActsData.actsLevel == null) {
+        if (interestedActsData == null) {
             Toast.makeText(EditGroupActivity.this, R.string.운동종목을_입력해주세요, Toast.LENGTH_SHORT).show();
             return;
 
@@ -193,6 +238,16 @@ public class EditGroupActivity extends BaseActivity {
             return;
         }
 
+        if (notConfirmedBtn.isChecked()) {
+            mGroupData.time = "nono";
+        }
+        else {
+            mGroupData.time = sDateTimeSecFormat.format(mStartDate.getTime());
+        }
+
+        mGroupData.maxMemberCount = Integer.parseInt(countEdt.getText().toString());
+        mGroupData.description = descriptionEdt.getText().toString();
+
 //        mGroupData.
     }
 
@@ -203,6 +258,7 @@ public class EditGroupActivity extends BaseActivity {
         this.nextBtn = (Button) findViewById(R.id.nextBtn);
         this.descriptionEdt = (EditText) findViewById(R.id.descriptionEdt);
         this.countEdt = (EditText) findViewById(R.id.countEdt);
+        this.dateLayout = (LinearLayout) findViewById(R.id.dateLayout);
         this.startTimeTxt = (TextView) findViewById(R.id.startTimeTxt);
         this.startDateTxt = (TextView) findViewById(R.id.startDateTxt);
         this.notConfirmedBtn = (ToggleButton) findViewById(R.id.notConfirmedBtn);
@@ -214,6 +270,7 @@ public class EditGroupActivity extends BaseActivity {
         this.actNameTxt = (TextView) findViewById(R.id.actNameTxt);
         this.titleEdt = (EditText) findViewById(R.id.titleEdt);
         this.categoryTxt = (TextView) findViewById(R.id.categoryTxt);
+        this.largeCategoryImg = (ImageView) findViewById(R.id.largeCategoryImg);
         this.largeCategoryTxt = (TextView) findViewById(R.id.largeCategoryTxt);
     }
 

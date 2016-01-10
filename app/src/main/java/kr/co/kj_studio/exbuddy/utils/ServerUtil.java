@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import kr.co.kj_studio.exbuddy.dataClass.GroupData;
 import kr.co.kj_studio.exbuddy.dataClass.UserData;
 
 public class ServerUtil {
@@ -164,4 +165,55 @@ public class ServerUtil {
 		});
 	}
 
+
+	// 그룹 관리
+
+
+	public static void registerGroup(final Context context, final GroupData groupData, final JsonResponseHandler handler) {
+		String url = BASE_URL + "registerGroup";
+//		UserData userData = ContextUtil.getUserData(context);
+
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("id", groupData.id+"");
+		data.put("category", groupData.category);
+		data.put("title", groupData.title);
+		data.put("activities", groupData.activities);
+		data.put("location", groupData.location);
+		data.put("geoLocation", groupData.geoLocation);
+		data.put("time", groupData.time);
+		data.put("maxMemberCount", groupData.maxMemberCount);
+		data.put("description", groupData.description);
+
+		AsyncHttpRequest.post(context, url,  data, true, new AsyncHttpRequest.HttpResponseHandler() {
+
+			@Override
+			public boolean onPrepare() {
+				return true;
+			}
+
+			@Override
+			public void onResponse(String response) {
+				System.out.println(response);
+//				Log.v("CHO", response);
+				try {
+					JSONObject json = new JSONObject(response);
+
+					if (handler != null)
+						handler.onResponse(json);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			}
+			@Override
+			public void onFinish() {
+
+			}
+
+			@Override
+			public void onCancelled() {
+
+			}
+
+		});
+	}
 }

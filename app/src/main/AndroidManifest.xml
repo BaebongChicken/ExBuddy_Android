@@ -63,9 +63,6 @@
         <activity android:name=".activities.CheckAllMembersActivity" />
 
         <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyCYmOGMAfM4oCcLWSk9jTgbCQtx7LZvgkQ" />
-        <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCYmOGMAfM4oCcLWSk9jTgbCQtx7LZvgkQ" />
 

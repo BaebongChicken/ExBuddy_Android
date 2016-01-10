@@ -28,6 +28,7 @@
                     android:text="@string/club" />
 
                 <ImageView
+                    android:id="@+id/largeCategoryImg"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="5dp"
@@ -74,6 +75,7 @@
 
                 <EditText
                     android:id="@+id/titleEdt"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -183,6 +185,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/dateLayout"
                     android:layout_width="match_parent"
                     android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">

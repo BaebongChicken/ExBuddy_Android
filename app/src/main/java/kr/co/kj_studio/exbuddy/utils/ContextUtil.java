@@ -3,6 +3,9 @@ package kr.co.kj_studio.exbuddy.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.ArrayList;
+
+import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.dataClass.UserData;
 
 /**
@@ -29,6 +32,37 @@ public class ContextUtil {
     private static final String aboutMe = "aboutMe";
     private static final String profilePhoto = "profilePhoto";
     private static final String imagePaths = "imagePaths";
+
+    public static ArrayList<String> getGroupCategoryNameArray() {
+
+        ArrayList<String> cardList = new ArrayList<String>();
+        cardList.add("VS");
+        cardList.add("번개");
+        cardList.add("레슨");
+        cardList.add("학교");
+        cardList.add("회사");
+        cardList.add("일반동호회");
+        cardList.add("공공장소");
+        cardList.add("개인장소");
+        cardList.add("운동용품");
+        return cardList;
+    }
+    public static int[] getGroupCategoryStringArray() {
+
+        int[] categoryStrings = {
+                R.string.vs_mode,
+                R.string.lightning,
+                R.string.lessonOrEvent,
+                R.string.school,
+                R.string.company,
+                R.string.normal_club,
+                R.string.공공장소,
+                R.string.개인장소,
+                R.string.운동용품
+        };
+
+        return categoryStrings;
+    }
 
     public static void setUserData(Context context, UserData userData) {
 

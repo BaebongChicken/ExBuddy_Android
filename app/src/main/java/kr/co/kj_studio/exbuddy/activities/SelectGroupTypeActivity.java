@@ -6,8 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import kr.co.kj_studio.exbuddy.R;
 import kr.co.kj_studio.exbuddy.dataClass.GroupData;
+import kr.co.kj_studio.exbuddy.utils.ContextUtil;
 
 public class SelectGroupTypeActivity extends BaseActivity {
 
@@ -22,6 +25,7 @@ public class SelectGroupTypeActivity extends BaseActivity {
     private android.widget.TextView excersiseToolTxt;
 
     GroupData mGroupData = new GroupData();
+    ArrayList<String> categories = ContextUtil.getGroupCategoryNameArray();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +67,7 @@ public class SelectGroupTypeActivity extends BaseActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(SelectGroupTypeActivity.this, EditGroupActivity.class);
-                mGroupData.category = ((TextView)v).getText().toString();
+                mGroupData.category = categories.get(Integer.parseInt(v.getTag().toString()));
                 intent.putExtra("groupData", mGroupData);
                 startActivity(intent);
             }
