@@ -15,13 +15,50 @@ import kr.co.kj_studio.exbuddy.dataClass.UserData;
 public class ServerUtil {
 	private static final String TAG = ServerUtil.class.getSimpleName();
 
-	private final static String BASE_URL = "http://yohun92.cafe24.com/ci/gb_dongari/";
+	public final static String BASE_URL = "http://yohun92.cafe24.com/ci/gb_dongari/";
 
-	public interface JsonResponseHandler {
+
+
+    public interface JsonResponseHandler {
 		void onResponse(JSONObject json);
 	}
 
+	public static void getMissions(final Context context, final JsonResponseHandler handler){
+        String url = BASE_URL + "getMissions";
+        Map<String, Object> data = new HashMap<String, Object>();
 
+        AsyncHttpRequest.post(context, url,  data, false, new AsyncHttpRequest.HttpResponseHandler() {
+
+            @Override
+            public boolean onPrepare() {
+                return true;
+            }
+
+            @Override
+            public void onResponse(String response) {
+                Log.v("CHO", response);
+                try {
+                    JSONObject json = new JSONObject(response);
+
+                    if (handler != null)
+                        handler.onResponse(json);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onFinish() {
+
+            }
+
+            @Override
+            public void onCancelled() {
+
+            }
+
+        });
+
+	}
 	public static void facebookLogin(final Context context, final String name, final String uid, final String email, final JsonResponseHandler handler) {
 		String url = BASE_URL + "facebookLogin";
 		//		String registrationId = ContextUtil.getRegistrationId(context);

@@ -17,6 +17,10 @@
     <string name="start">시작하기</string>
     <string name="remove"><u>삭제</u></string>
     <string name="modify"><u>수정</u></string>
+    <string name="lightning">번개</string>
+    <string name="club">클럽</string>
+    <string name="place">장소</string>
+    <string name="apply"><u>적용기</u></string>
 
     <!--SignUpActivity-->
     <string name="signup_title">기본정보입력</string>
@@ -72,10 +76,19 @@
     <string name="host">호스트</string>
     <string name="group_qna">Comments and Q&amp;A</string>
     <string name="report">신고</string>
+
+    <!--pageFilteringActivity-->
+    <string name="pagefiltering_title">페이지 필터</string>
+    <string name="pagefiltering_subtitle_1">종목</string>
+    <string name="pagefiltering_subtitle_2">페이지</string>
+    <string name="pagefiltering_subtitle_3">시간</string>
+    <string name="pagefiltering_subtitle_4">키워드</string>
+    <string name="pagefiltering_caption_1">정기모임/정해지지 않음</string>
     <!--FindGroupFragment-->
-    <string name="lightning">번개</string>
-    <string name="club">클럽</string>
-    <string name="place">장소</string>
+    <!--<string name="lightning">번개</string>-->
+    <!--<string name="club">클럽</string>-->
+    <!--<string name="place">장소</string>-->
+    <!--위의 3가지는 쓰이는 곳이 많아 share로 뺌-->
 
     <!--MyFriends-->
     <string name="myfriend">내친구</string>
